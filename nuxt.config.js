@@ -29,19 +29,29 @@ export default {
   ],
 
   plugins: [
+    '~/plugins/formatPageData.js'
   ],
 
   components: true,
 
   buildModules: [
+    '@nuxt/image',
     '@nuxtjs/axios',
-    '@nuxt/typescript-build',
-    '@nuxtjs/tailwindcss',
   ],
 
   modules: [
   ],
 
   build: {
-  }
+    postcss: {
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {},
+      },
+    },
+  },
+
+  image: {
+    domains: ['https://api.balcar.com.pl/'],
+  },
 }

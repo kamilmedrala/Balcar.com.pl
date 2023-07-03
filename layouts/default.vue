@@ -1,7 +1,8 @@
 <template>
-  <div class="min-h-screen bg-gray-lightest">
+  <div class="min-h-screen bg-gray-lightest relative">
     <LayoutNavbar />
-    <Nuxt />
+    <Nuxt class="relative z-10" />
+    <LayoutBackground />
   </div>
 </template>
 
