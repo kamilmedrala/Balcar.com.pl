@@ -16,6 +16,9 @@ module.exports = {
             dark: '#3B3A37',
           },
         },
+        fontFamily:{
+          'logo': ['OPTIEdgarBold','ui-sans-serif', 'system-ui','-apple-system', 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell', 'Noto Sans', 'sans-serif']
+        }
       },
     },
     plugins: [],

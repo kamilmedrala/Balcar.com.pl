@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: "OPTIEdgarBold";
+    src: local("OPTIEdgarBold"),
+     url(~assets/fonts/OPTIEdgarBold-Extended.ttf.woff)
+}
 
 @layer utilities{
 
@@ -12,4 +17,5 @@
     .blur-fix{
         @apply backdrop-brightness-100 backdrop-contrast-100 backdrop-grayscale-0 backdrop-hue-rotate-0 backdrop-invert-0 backdrop-opacity-100 backdrop-saturate-100 backdrop-sepia-0
     }
+
 }
