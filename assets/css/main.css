@@ -11,7 +11,7 @@
 @layer utilities{
 
     .custom-container{
-        @apply container mx-auto px-5 md:px-10
+        @apply container mx-auto px-5 sm:px-10 xl:px-20
     }
 
     .blur-fix{

@@ -43,6 +43,7 @@ export default {
   ],
 
   build: {
+    standalone: true,
     extend(config) {
       config.module.rules.push({
         test: /\.mjs$/,

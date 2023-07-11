@@ -2,6 +2,7 @@
   <div class="min-h-screen bg-gray-lightest relative">
     <LayoutNavbar />
     <Nuxt class="relative z-10" />
+    <!-- <CommonSocialIcons /> -->
     <LayoutBackground />
   </div>
 </template>

@@ -1,9 +1,12 @@
 <template>
   <div>
-    <SectionContainer>
+    <SectionContainer class="mb-10 md:mb-16">
       <template #full>
         <SectionHeroMain :data="pageData.acf.section_banner.gallery" />
       </template>
+    </SectionContainer>
+    <SectionContainer>
+      <SectionContent :data="pageData.acf.section_about" />
     </SectionContainer>
     <SectionContainer>
       <div class="h-[200vh]"></div>
@@ -14,6 +17,7 @@
 <script>
 import SectionContainer from '~/components/Section/Container.vue'
 import SectionHeroMain from '~/components/Section/Hero/Main.vue'
+import SectionContent from '~/components/Section/Content.vue'
 
 export default {
   async asyncData({ $axios, $formatPageData }) {
@@ -21,7 +25,7 @@ export default {
       $formatPageData(pageData)
       return { pageData }
     },
-  components: { SectionContainer, SectionHeroMain },
+  components: { SectionContainer, SectionHeroMain, SectionContent },
 }
 </script>
 

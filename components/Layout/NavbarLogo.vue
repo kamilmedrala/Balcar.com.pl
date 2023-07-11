@@ -1,14 +1,23 @@
 <template>
-    <nuxt-link to="/" class="p-2 pl-0">
+    <nuxt-link to="/" class="p-2 pl-0 flex"
+    @click.native="scrollTop()">
         <nuxt-picture
-            :src="'/images/Balcar_logo.png'" 
+            :src="'/images/Balcar_logo_part.png'" 
             title="" 
             alt="Balcar logo" 
-            class="block h-12 w-14 overflow-hidden transition-all duration-300"
-            :class="{'w-52':expanded}"
+            class="block h-12 overflow-hidden transition-all duration-300"
+            :imgAttrs="{class: 'h-12 object-cover object-left'}"
+            />
+        <nuxt-picture
+            :src="'/images/Balcar_logo_text.png'" 
+            title="" 
+            alt="Balcar logo" 
+            class="block h-12 overflow-hidden transition-all duration-300 pl-1"
+            :class="[[expanded ? 'translate-y-0' : 'translate-y-[-105%] opacity-0'],{'invert':colorInverted}]"
             :imgAttrs="{class: 'h-12 object-cover object-left'}"
             />
     </nuxt-link>
+
 </template>
 
 <script>
@@ -17,6 +26,18 @@ export default {
         expanded:{
             type: Boolean,
             default: false
+        },
+        colorInverted:{
+            type: Boolean,
+            default: false
+        },
+    },
+    methods:{
+        scrollTop(){
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+                });
         }
     }
 }

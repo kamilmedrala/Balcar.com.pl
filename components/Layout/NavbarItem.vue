@@ -7,7 +7,7 @@
   <div class=" my-3 md:m-0 overflow-hidden md:overflow-visible"
   :class="{'mx-5':isMainParent}">
       <div
-        class="block transition duration-500 md:duration-200 delay-300 md:delay-0"
+        class="block transition duration-500 md:duration-200 delay-200 md:delay-0"
         :class="[
           { peer: data.child_items },
           [
