@@ -1,5 +1,5 @@
 <template>
-  <div v-if="data.content" class="content text-gray-dark" v-html="data.content">
+  <div v-if="data.content" class="content text-gray-dark mb-5 md:mb-10" v-html="data.content">
 
   </div>
 </template>
