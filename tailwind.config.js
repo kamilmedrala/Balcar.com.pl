@@ -17,8 +17,10 @@ module.exports = {
           },
         },
         fontFamily:{
-          'logo': ['OPTIEdgarBold','ui-sans-serif', 'system-ui','-apple-system', 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell', 'Noto Sans', 'sans-serif']
-        }
+          'logo': ['OPTIEdgarBold','Titillium Web','ui-sans-serif', 'system-ui','-apple-system', 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell', 'Noto Sans', 'sans-serif'],
+          'body': ['Titillium Web','ui-sans-serif', 'system-ui','-apple-system', 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell', 'Noto Sans', 'sans-serif']
+        },
+
       },
     },
     plugins: [],

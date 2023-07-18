@@ -1,27 +1,26 @@
 <template>
   <div
-    class="relative"
+    class="relative group"
     @mouseenter="setHover(true)"
     @mouseleave="setHover(false)"
   >
   <div class=" my-3 md:m-0 overflow-hidden md:overflow-visible"
   :class="{'mx-5':isMainParent}">
       <div
-        class="block transition duration-500 md:duration-200 delay-200 md:delay-0"
+        class="block transition duration-500 md:duration-200 delay-200 md:delay-0 border-l border-l-transparent"
         :class="[
-          { peer: data.child_items },
-          [
-            isMainParent
-              ? 'md:p-5 border-0 border-l border-transparent '
-              : 'md:py-2 px-3 ml-2',
-          ],
-          { 'md:bg-white md:!border-l-gray-dark': isMainParent && isHover },
+          { 'group-hover:md:bg-white group-hover:md:!border-l-gray-dark': isMainParent },
           { 'translate-y-full md:translate-y-0': !isMobileExpanded },
         ]"
       >
         <CommonLink
           :link="data.url"
           class="block text-gray-lightest md:text-gray-dark text-2xl md:text-base font-light md:font-normal hover:text-gold transition duration-200 overflow-hidden md:overflow-auto"
+          :class="[
+            isMainParent
+              ? 'md:p-5 border-0 border-l border-transparent '
+              : 'md:py-2 px-3 ml-2',
+          ]"
         >
           {{ data.title }}
         </CommonLink>
@@ -29,8 +28,7 @@
   </div>
     <div
       v-if="data.child_items"
-      class="md:absolute ml-5 md:ml-0 top-full left-0 min-w-[220px] shadow-none overflow-hidden transition-all duration-[400ms]"
-      :class="{ 'md:shadow-md': isHover }"
+      class="group-hover:md:shadow-md md:absolute ml-5 md:ml-0 top-full left-0 min-w-[220px] shadow-none overflow-hidden transition-all duration-[400ms]"
       :style="{ height: isMobile ? 'auto' : subitemsHeight }"
     >
       <div ref="subitemsContainer" class="md:pt-1">
@@ -41,9 +39,8 @@
             <LayoutNavbarItem
               :data="item"
               :isMobileExpanded="isMobileExpanded"
-              class="md:opacity-0 md:-translate-x-10 transition-all md:duration-300"
-              :class="{ 'md:!opacity-100 md:!translate-x-0': isHover }"
-              :style="{ 'transition-delay': `${isHover ? index * 100 : 0}ms` }"
+              class="md:opacity-0 md:-translate-x-10 transition-all md:duration-300 group-hover:md:!opacity-100 group-hover:md:!translate-x-0"
+              :style="{ 'transition-delay': `${ index * 75 }ms` }"
             />
           </li>
         </ul>

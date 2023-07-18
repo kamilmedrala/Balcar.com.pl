@@ -5,14 +5,15 @@
         <SectionHeroMain :data="pageData.acf.section_banner" />
       </template>
     </SectionContainer>
-    <SectionContainer class="mb-10 md:mb-20">
+    <SectionContainer class="mb-28">
       <SectionContent :data="pageData.acf.section_about" />
     </SectionContainer>
-    <SectionContainer class="mb-20">
+    <SectionContainer class="mb-16 md:mb-36">
       <SectionCounters :data="pageData.acf.section_counters" />
     </SectionContainer>
     <SectionContainer>
-      <h1 class="text-gray-dark">KOLEJNY</h1>
+      <SectionContent :data="pageData.acf.section_services" />
+      <SectionServices />
       <div class="h-[200vh]"></div>
     </SectionContainer>
   </div>
@@ -23,6 +24,7 @@ import SectionContainer from '~/components/Section/Container.vue'
 import SectionHeroMain from '~/components/Section/Hero/Main.vue'
 import SectionContent from '~/components/Section/Content.vue'
 import SectionCounters from '~/components/Section/Counters.vue'
+import SectionServices from '~/components/Section/Services/index.vue'
 
 export default {
   async asyncData({ $axios, $formatPageData }) {
