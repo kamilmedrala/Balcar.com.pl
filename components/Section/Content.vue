@@ -2,7 +2,7 @@
     <div class="content text-gray-dark flex flex-col md:flex-row">
         <div v-if="data.title" class="shrink-0 md:basis-1/4 pr-5 md:pr-10 mb-5 md:mb-10">
             <EffectSlide class="!w-fit">
-                <div class="pl-2 md:pl-4 pb-2 text-3xl md:text-5xl font-semibold w-fit" v-html="data.title">
+                <div class="pl-2 md:pl-4 pb-2 text-4xl md:text-6xl font-semibold w-fit" v-html="data.title">
                 </div>
             </EffectSlide>
         </div>
