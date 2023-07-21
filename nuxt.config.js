@@ -4,9 +4,9 @@ export default {
     base: '/Balcar.com.pl/'
   },
   publicRuntimeConfig: {
-    apiUrl: process.env.API_URL,
+    apiUrl: 'https://api.balcar.com.pl',
     axios: {
-      baseURL: `${process.env.API_URL}/wp-json`
+      baseURL: `https://api.balcar.com.pl/wp-json`
     }
   },
 
