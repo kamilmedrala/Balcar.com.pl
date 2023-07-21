@@ -1,6 +1,8 @@
 export default {
   target: 'static',
-
+  router: {
+    base: '/Balcar.com.pl/'
+  },
   publicRuntimeConfig: {
     apiUrl: process.env.API_URL,
     axios: {
