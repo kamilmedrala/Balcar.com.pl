@@ -1,7 +1,7 @@
 <template>
-    <div class="hero-main-container flex flex-col justify-end relative w-full h-[75vh] md:h-[85vh] max-h-[700px] min-h-[300px] overflow-hidden">
+    <div class="hero-main-container mt-16 flex flex-col justify-end relative w-full h-[75vh] md:h-[85vh] max-h-[700px] min-h-[300px] md:pl-20 overflow-hidden">
       
-      <div class="absolute inset-0">
+      <div class="h-full">
         <div v-if="data.gallery" ref="swiper" class="swiper swiper-container w-full h-full">
           <div class="swiper-wrapper w-full h-full">
             <div class="swiper-slide w-full h-full" v-for="image in data.gallery" :key="image.id">
@@ -18,14 +18,14 @@
         </div>
       </div>
 
-      <div class="custom-container realtive z-10 pointer-events-none flex justify-between items-end">
-        <div class="relative z-10 pointer-events-auto shrink-0 mb-10 w-min sm:w-fit md:min-w-[40%] py-6 pr-10">
+      <div class="absolute inset-0 custom-container z-10 pointer-events-none flex justify-between items-end">
+        <div class="relative z-10 pointer-events-auto md:shrink-0 mb-10 md:w-min sm:w-fit md:min-w-[40%] md:pl-5 py-6 pr-10">
           <CommonLogoBig class="z-10 mb-7" />
           <UiButton v-if="data.button &&  data.button.link?.url" :link="data.button.link.url" class="z-10 mx-auto" >
             {{data.button.text}}
           </UiButton>
           <div
-            class="absolute z-0 top-0 bottom-0 right-0 left-[-50vw] bg-gray-lightest/60 backdrop-blur-sm"
+            class="absolute z-0 top-0 bottom-0 right-0 -left-[50vw] md:left-0 bg-gray-lightest/70 backdrop-blur-sm"
           ></div>
         </div>
         <div class="swiper-pagination !relative hidden md:flex justify-end items-end pointer-events-auto grow-0 mb-10 bottom-0"></div>
@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import { Swiper, Navigation, Pagination, Autoplay, EffectFade } from 'swiper'
+import { Swiper, Pagination, Autoplay, EffectFade } from 'swiper'
 import 'swiper/swiper-bundle.min.css'
 
 export default {
@@ -49,7 +49,7 @@ export default {
     return {
       swiper: null,
       swiperOptionsObject: {
-        modules: [EffectFade, Navigation, Autoplay, Pagination],
+        modules: [EffectFade, Autoplay, Pagination],
         effect: "fade",
         slidesPerView: 'auto',
         centeredSlides: true,
@@ -59,10 +59,6 @@ export default {
           disableOnInteraction: false,
         },
         speed: 1000,
-        navigation: {
-          nextEl: '.swiperGallery-next',
-          prevEl: '.swiperGallery-prev',
-        },
         pagination: {
           el: ".swiper-pagination",
           clickable: true,

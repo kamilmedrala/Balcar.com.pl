@@ -1,10 +1,28 @@
 <template>
-    <div class="flex flex-col">
-        <SectionServicesItem v-for="item in menuServicesChildren" :key="item.ID" :data="item" />
+  <div>
+    <SectionContent :data="data" />
+    <div class="flex flex-col mb-10">
+      <SectionServicesItem v-for="item in menuServicesChildren" :key="item.ID" :data="item" />
     </div>
+    <div v-if="data.button && data.button.link && data.button.text" class="w-full">
+      <UiButton :link="data.button.link.url" class="mx-auto">
+        {{ data.button.text }}
+      </UiButton>
+    </div>
+  </div>
 </template>
 <script>
+import UiButton from '~/components/Ui/Button.vue'
 export default {
+  components:{
+    UiButton,
+  },
+  props:{
+    data: {
+      type:Object,
+      required: true
+    }
+  },
   computed: {
     menuServicesChildren() {
       const menuItems = this.$store.getters['getMenus'].items
@@ -17,8 +35,6 @@ export default {
       return servicesMenu.child_items
     }
   },
-  methods:{
-
-  }
+  
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
     <EffectSlide :eventOnly="true" @visible="setVisibility()">
         <div class="w-full transition duration-500"
-        :class="{'-translate-y-full':!isVisible}">
+        :class="{'-translate-y-full opacity-10':!isVisible}">
             <CommonLink :link="data.url" class="flex justify-between items-center group p-5 md:p-10 bg-gray-lightest hover:bg-gray-light border-b border-b-gray-dark transition duration-300">
                 <h2 class="text-lg md:text-xl transition duration-300 group-hover:translate-x-2">
                     {{ data.title }}

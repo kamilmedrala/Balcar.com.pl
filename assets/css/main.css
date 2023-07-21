@@ -23,7 +23,6 @@
 
 @layer base{
     html,body{
-        scroll-bevahiour: smooth;
-        @apply font-body font-normal
+        @apply font-body font-normal scroll-smooth
     }
 }

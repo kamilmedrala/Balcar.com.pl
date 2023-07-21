@@ -1,5 +1,8 @@
 <template>
-  <nuxt-link v-if="!checkExternal" :to="linkFormatted">
+  <nuxt-link v-if="linkHash" :to="{path:'/', hash: linkHash.hash}">
+    <slot></slot>
+  </nuxt-link>
+  <nuxt-link v-else-if="!checkExternal" :to="linkFormatted">
     <slot></slot>
   </nuxt-link>
   <a v-else :href="linkFormatted">
@@ -22,8 +25,20 @@ export default {
     },
     computed:{
         linkFormatted(){
+            if (!this.link) {
+                return ''
+            }
             const parsedLink = this.link.replace(this.$config.apiUrl,'')
             return parsedLink
+        },
+
+        linkHash(){
+            if (this.linkFormatted.includes('#')) {
+                let path = this.linkFormatted.split('/#')
+                return {path: path.slice(0,-1).join(''), hash:`${path[path.length - 1]}`}
+            }else{
+                return false
+            }
         },
 
         checkExternal(){

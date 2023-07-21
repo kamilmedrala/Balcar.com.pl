@@ -7,7 +7,6 @@
         </div>
         <div v-if="!eventOnly" class="absolute left-0 top-0 h-full w-px bg-gray-dark transition duration-500"
         :class="{'-translate-y-full opacity-10':!targetIsVisible}">
-
         </div>
     </div>
 
@@ -24,8 +23,10 @@ export default {
 
         useIntersectionObserver(target,([{ isIntersecting }])=>{
             if (!targetIsVisible.value && isIntersecting) {
-                targetIsVisible.value = true
-                emit('visible')
+                setTimeout(()=>{
+                    targetIsVisible.value = true
+                    emit('visible')
+                },props.delay)
             }
         },{
             rootMargin: '-50px'
@@ -37,6 +38,10 @@ export default {
             type: Boolean,
             default: false
         },
+        delay: {
+            type:Number,
+            default: 0
+        }
     },
 
 }
