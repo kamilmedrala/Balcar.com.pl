@@ -19,6 +19,10 @@
         @apply backdrop-brightness-100 backdrop-contrast-100 backdrop-grayscale-0 backdrop-hue-rotate-0 backdrop-invert-0 backdrop-opacity-100 backdrop-saturate-100 backdrop-sepia-0
     }
 
+    .invert-fix{
+        @apply brightness-100 contrast-100 grayscale-0 hue-rotate-0 blur-none saturate-100 sepia-0 shadow-none
+    }
+
 }
 
 @layer base{

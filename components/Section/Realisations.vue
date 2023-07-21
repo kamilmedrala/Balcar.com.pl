@@ -8,12 +8,13 @@
     >
       <div class="swiper-wrapper items-center w-full h-full">
         <div
-          class="swiper-slide relative mx-2 md:mx-5 w-full overflow-hidden"
+          class="swiper-slide relative mx-2 md:mx-5 w-full shrink-0 overflow-hidden"
           v-for="image in data.gallery"
           :key="image.id"
         >
         <EffectParallax class="w-full h-full relative z-20" :parallaxOffset="70"
         data-swiper-parallax="150">
+        <div class="absolute inset-0 z-10 bg-gray-light animate-pulse"></div>
         <nuxt-picture
         v-if="image.full_image_url"
         class="h-full w-full relative z-20"
@@ -23,7 +24,6 @@
                 :imgAttrs="{ class: 'w-full h-full object-cover' }"
               />
             </EffectParallax>
-            <div class="absolute inset-0 z-10 bg-gray-light animate-pulse"></div>
         </div>
       </div>
     </div>
@@ -54,10 +54,9 @@ export default {
     return {
       swiper: null,
       swiperOptionsObject: {
-        slidesPerView: 1,
-        modules: [ Autoplay, Parallax, Lazy],
         slidesPerView: 'auto',
-        centeredSlides: true,
+        modules: [ Autoplay, Parallax, Lazy],
+        // centeredSlides: true,
         grabCursor: 'true',
         autoplay: {
           delay: 4000,
