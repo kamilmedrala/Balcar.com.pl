@@ -16,7 +16,6 @@ export default {
     methods:{
         setVisibility(){
             this.isVisible = true
-            console.log('kurwaaaa');
         }        
     }
 
