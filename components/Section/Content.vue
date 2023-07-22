@@ -2,7 +2,7 @@
     <div class="content text-gray-dark flex flex-col md:flex-row">
         <div v-if="data.title" class="shrink-0 md:basis-1/4 pr-5 md:pr-10 mb-5 md:mb-10">
             <EffectSlide class="!w-fit">
-                <div class="pl-2 md:pl-4 pb-2 text-4xl md:text-6xl font-semibold w-fit" v-html="data.title">
+                <div class="title" v-html="data.title">
                 </div>
             </EffectSlide>
         </div>
@@ -27,7 +27,29 @@ export default {
 .content p {
     @apply text-base md:text-lg
 }
-.content a {
+
+.content .title {
+    @apply pl-2 md:pl-4 pb-2 font-semibold w-fit
+}
+
+.content .title :deep(h1){
+    @apply text-5xl md:text-7xl
+}
+.content .title :deep(h2){
+    @apply text-4xl md:text-6xl
+}
+.content .title :deep(h3){
+    @apply text-2xl md:text-4xl
+}
+.content .title :deep(h4){
+    @apply text-xl md:text-2xl
+}
+
+.content:deep(a) {
     @apply text-gold hover:underline
+}
+
+.content:deep(em){
+    @apply text-gold not-italic
 }
 </style>

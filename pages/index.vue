@@ -5,7 +5,7 @@
         <SectionHeroMain :data="pageData.acf.section_banner" />
       </template>
     </SectionContainer>
-    <SectionContainer :section-number="1" class="mb-16 md:mb-32">
+    <SectionContainer :title="'1 - O nas'" class="mb-16 md:mb-32">
       <EffectParallax :parallaxOffset="100" class="!absolute !h-auto overflow-hidden -z-10 top-8 -bottom-24 md:-bottom-[9.75rem] left-0 md:left-1/5 right-0">
         <CommonBackgroundHouse />
       </EffectParallax>
@@ -13,14 +13,20 @@
       <SectionContent :data="pageData.acf.section_about" class="mb-16 md:mb-36" />
       <SectionCounters :data="pageData.acf.section_counters" />
     </SectionContainer>
-    <SectionContainer :id="'uslugi'" :section-number="2" class="mb-20">
+    <SectionContainer :id="'uslugi'" :title="'2 - Usługi'" class="mb-20">
       <SectionServices :data="pageData.acf.section_services" />
     </SectionContainer>
-    <SectionContainer :section-number="3">
+    <SectionContainer :title="'3 - Realizacje'" class="mb-16 md:mb-36">
       <template #full>
         <SectionRealisations :data="pageData.acf.section_realisations" />
       </template>
     </SectionContainer>
+    <!-- <SectionContainer>
+      <div class="w-full flex flex-wrap gap-10">
+        <SectionContent v-if="pageData.acf.section_text_1" :data="pageData.acf.section_text_1" />
+        <SectionContent v-if="pageData.acf.section_text_2" :data="pageData.acf.section_text_2" />
+      </div>
+    </SectionContainer> -->
     <div class="h-[200vh]"></div>
   </div>
 </template>

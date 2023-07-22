@@ -2,8 +2,8 @@
     <section class="w-full relative">
         <div v-if="id" :id="id" class="-top-20 relative"></div>
         <div class="custom-container relative">
-            <div v-if="sectionNumber" class="relative mb-5 md:mb-10">
-                <span class="text-gray-light text-lg">/{{ sectionNumber }}</span>
+            <div v-if="title" class="relative mb-5 md:mb-10">
+                <span class="text-gray-light text-lg">/{{ title }}</span>
                 <hr class="absolute w-screen right-0 border-gray-light" >
             </div>
             <slot></slot>  
@@ -19,8 +19,8 @@ export default {
             type:String,
             required: false
         },
-        sectionNumber:{
-            type:Number,
+        title:{
+            type:Number | String,
             required: false
         },
     }
