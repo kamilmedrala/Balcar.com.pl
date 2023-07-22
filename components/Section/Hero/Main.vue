@@ -25,7 +25,7 @@
             {{data.button.text}}
           </UiButton>
           <div
-            class="absolute z-0 top-0 bottom-0 right-0 -left-[50vw] md:left-0 bg-gray-lightest/70 backdrop-blur-sm blur-fix"
+            class="absolute z-0 top-0 bottom-0 right-0 -left-[50vw] md:left-0 bg-gray-lightest/80 backdrop-blur-sm blur-fix"
           ></div>
         </div>
         <div class="swiper-pagination !relative hidden md:flex justify-end items-end pointer-events-auto grow-0 mb-10 bottom-0"></div>
