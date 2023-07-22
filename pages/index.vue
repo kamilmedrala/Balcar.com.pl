@@ -6,10 +6,8 @@
       </template>
     </SectionContainer>
     <SectionContainer :section-number="1" class="mb-16 md:mb-32">
-      <EffectParallax :parallaxOffset="100" class="!absolute !h-auto overflow-hidden -z-10 top-8 -bottom-24 md:-bottom-40 left-0 md:left-1/5 right-0">
-        <nuxt-picture class=" invert invert-fix opacity-[20%]" 
-              :src="'/images/dotted_map_bg.png'" 
-              :imgAttrs="{class: 'h-full w-full object-cover object-right'}"/>
+      <EffectParallax :parallaxOffset="100" class="!absolute !h-auto overflow-hidden -z-10 top-8 -bottom-24 md:-bottom-[9.75rem] left-0 md:left-1/5 right-0">
+        <CommonBackgroundHouse />
       </EffectParallax>
 
       <SectionContent :data="pageData.acf.section_about" class="mb-16 md:mb-36" />

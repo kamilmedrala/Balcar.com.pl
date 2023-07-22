@@ -25,7 +25,7 @@
             {{data.button.text}}
           </UiButton>
           <div
-            class="absolute z-0 top-0 bottom-0 right-0 -left-[50vw] md:left-0 bg-gray-lightest/70 backdrop-blur-sm"
+            class="absolute z-0 top-0 bottom-0 right-0 -left-[50vw] md:left-0 bg-gray-lightest/70 backdrop-blur-sm blur-fix"
           ></div>
         </div>
         <div class="swiper-pagination !relative hidden md:flex justify-end items-end pointer-events-auto grow-0 mb-10 bottom-0"></div>
@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import { Swiper, Pagination, Autoplay, EffectFade } from 'swiper'
+import { Swiper, Pagination, Autoplay } from 'swiper'
 import 'swiper/swiper-bundle.min.css'
 
 export default {
@@ -49,8 +49,7 @@ export default {
     return {
       swiper: null,
       swiperOptionsObject: {
-        modules: [EffectFade, Autoplay, Pagination],
-        effect: "fade",
+        modules: [ Autoplay, Pagination],
         slidesPerView: 'auto',
         centeredSlides: true,
         grabCursor: 'true',

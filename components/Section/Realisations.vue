@@ -1,29 +1,31 @@
 <template>
   <div class="swiper-realisations overflow-hidden">
     <SectionContent class="custom-container relative" :data="data" />
-    <div
-      v-if="data.gallery"
-      ref="swiper"
-      class="swiper swiper-container mx-auto !w-10/12 md:!w-3/5 !aspect-video mb-10 !overflow-visible"
-    >
-      <div class="swiper-wrapper items-center w-full h-full">
-        <div
-          class="swiper-slide relative mx-2 md:mx-5 w-full shrink-0 overflow-hidden"
-          v-for="image in data.gallery"
-          :key="image.id"
-        >
-        <EffectParallax class="w-full h-full relative z-20" :parallaxOffset="70"
-        data-swiper-parallax="150">
-        <div class="absolute inset-0 z-10 bg-gray-light animate-pulse"></div>
-        <nuxt-picture
-        v-if="image.full_image_url"
-        class="h-full w-full relative z-20"
-        :src="image.full_image_url"
-                :fit="'cover'"
-                loading="lazy"
-                :imgAttrs="{ class: 'w-full h-full object-cover' }"
-              />
-            </EffectParallax>
+    <div v-if="data.gallery" class="mx-auto !w-10/12 md:!w-3/5 !aspect-video max-h-[600px] mb-10 overflow-visible">
+      <div
+        ref="swiper"
+        class="swiper swiper-container h-full !overflow-visible"
+      >
+        <div class="swiper-wrapper items-center w-full h-full">
+          <div
+            class="swiper-slide relative mx-2 md:mx-5 w-full shrink-0 overflow-hidden"
+            v-for="image in data.gallery"
+            :key="image.id"
+          >
+          <EffectParallax class="w-full h-full relative z-20" :parallaxOffset="70"
+          data-swiper-parallax="150">
+          <nuxt-picture
+          v-if="image.full_image_url"
+          class="h-full w-full relative z-20"
+          :src="image.full_image_url"
+                  :fit="'cover'"
+                  loading="lazy"
+                  :imgAttrs="{ class: 'w-full h-full object-cover' }"
+                  />
+          </EffectParallax>
+          <div class="absolute inset-0 z-10 bg-gray-light animate-pulse"
+          data-swiper-parallax="150"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -56,7 +58,7 @@ export default {
       swiperOptionsObject: {
         slidesPerView: 'auto',
         modules: [ Autoplay, Parallax, Lazy],
-        // centeredSlides: true,
+        centeredSlides: true,
         grabCursor: 'true',
         autoplay: {
           delay: 4000,

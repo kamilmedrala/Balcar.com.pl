@@ -14,9 +14,9 @@
       <LayoutNavbarLogo class="relative z-50" :expanded="expandLogo || mobileExpanded" :colorInverted="mobileExpanded" />
       <LayoutNavbarHamburger :isExpanded="mobileExpanded"
       @click.native="toggleMobileExpand()"/>
-      <div class="absolute md:static z-30 top-0 left-0 right-0 md:min-w-[20%] md:h-auto transition-all duration-300 bg-gray-dark/0 md:bg-transparent overflow-hidden md:overflow-visible"
+      <div class="absolute md:static z-30 top-0 left-0 right-0 md:min-w-[25%] md:h-auto transition-all duration-300 bg-gray-dark/0 md:bg-transparent overflow-hidden md:overflow-visible"
       :class="[mobileExpanded ? 'h-screen' : 'h-0']">
-        <ul class="container mx-auto md:mx-0 relative z-40 min-w-[20%] flex flex-col md:flex-row pt-28 md:pt-0">
+        <ul class="container mx-auto md:mx-0 relative z-40 min-w-[25%] flex flex-col md:flex-row pt-28 md:pt-0">
           <li v-for="item in menuData" :key="item.ID">
             <LayoutNavbarItem :data="item" :isMainParent="true" :isMobileExpanded="mobileExpanded"/>
           </li>
@@ -26,11 +26,7 @@
        class="absolute z-20 top-0 left-0 right-0 md:hidden transition-all duration-500 " 
        :class="[mobileExpanded ? 'h-screen' : 'h-0']">
        <div class="custom-container h-full flex">
-         <div class="w-1/3 h-full border-0 border-l border-gray-light/5">
-         </div>
-         <div class="w-1/3 h-full border-0 border-l border-gray-light/5">
-         </div>
-         <div class="w-1/3 h-full border-0 border-x border-gray-light/5">
+         <div class="h-full border-0 border-l border-gray-light/5">
          </div>
        </div>
       </div>

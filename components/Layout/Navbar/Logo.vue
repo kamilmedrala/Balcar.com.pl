@@ -12,7 +12,7 @@
             :src="'/images/Balcar_logo_text.png'" 
             title="" 
             alt="Balcar logo" 
-            class="block h-12 overflow-hidden transition-all duration-300 pl-1"
+            class="block h-12 overflow-hidden transition-all duration-300 pl-1 invert-fix"
             :class="[[expanded ? 'translate-y-0' : 'translate-y-[-105%] opacity-0'],{'invert':colorInverted}]"
             :imgAttrs="{class: 'h-12 object-cover object-left'}"
             />
