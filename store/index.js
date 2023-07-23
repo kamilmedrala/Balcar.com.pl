@@ -1,6 +1,9 @@
 
 export const state = () => ({
-  menus: {},
+  menus: {
+    top: {},
+    footer: {}
+  },
   general: {}
 })
 
@@ -11,28 +14,19 @@ export const getters = {
   },
   
   getGeneral(state) {
-    return state.menus
+    return state.general
   },
 }
 
 export const mutations = {
-  setMenus(state, data ) {    
-    state.menus = data
+  setTopMenu(state, data ) {    
+    state.menus.top = data
+  },
+  setFooterMenu(state, data ) {    
+    state.menus.footer = data
   },
 
   setGeneral(state, data ) {    
     state.general = data
   },
-}
-
-export const actions = {
-  async nuxtServerInit({ commit }) {
-    const menuData = await this.$axios.$get('/menus/v1/menus/top-menu')
-    commit('setMenus', menuData)
-
-    const generalData = await this.$axios.$get('/wp/v2/settings-custom/81')
-    if (generalData.acf) {
-      commit('setGeneral', generalData.acf)
-    }
-  }
 }

@@ -1,5 +1,5 @@
 <template>
-    <div class="hero-main-container mt-16 flex flex-col justify-end relative w-full h-[75vh] md:h-[85vh] max-h-[700px] min-h-[300px] md:pl-20 overflow-hidden">
+    <div class="hero-main-container mt-16 flex flex-col justify-end relative w-full h-[75vh] md:h-[85vh] max-h-[700px] min-h-[300px] md:pl-10 xl:pl-20 overflow-hidden">
       
       <div class="h-full">
         <div v-if="data.gallery" ref="swiper" class="swiper swiper-container w-full h-full">

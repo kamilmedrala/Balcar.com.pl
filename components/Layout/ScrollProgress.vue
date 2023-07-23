@@ -1,5 +1,6 @@
 <template>
-    <div class="hidden md:flex flex-col border-0 border-r border-solid border-gray-500 h-36 fixed top-1/3 left-6 z-20">
+    <div class="hidden md:flex flex-col border-0 border-r border-solid border-gray-500 h-36 fixed top-1/3 left-1 xl:left-5 z-20 transition-opacity duration-200"
+    :class="{'opacity-0':height < screenHeight + 200}">
         <div class="relative w-6 h-full -top-24 translate-y-24 text-gray-500 overflow-hidden">
             <span class="absolute -right-12 top-14 flex items-center -rotate-90 whitespace-nowrap transition duration-200 cursor-pointer"
             :class="{'translate-x-6':y > 100 || !isMounted}"
@@ -42,7 +43,6 @@ setup(){
         setDocHeight()
         isMounted.value = true
     })
-
     watch(screenWidth,()=>{
         setDocHeight()
     })
@@ -69,7 +69,7 @@ setup(){
         }
     }
 
-    return { y, scrollPercent, screenWidth,screenHeight, height ,isMounted,scrollToTop,scrollLower }
+    return { y, scrollPercent, screenWidth,screenHeight, height ,isMounted, scrollToTop,scrollLower }
 }
 
 }

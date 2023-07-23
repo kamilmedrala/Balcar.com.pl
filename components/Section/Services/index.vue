@@ -25,7 +25,7 @@ export default {
   },
   computed: {
     menuServicesChildren() {
-      const menuItems = this.$store.getters['getMenus'].items
+      const menuItems = this.$store.getters['getMenus'].top.items
       const servicesMenu = menuItems.find(item => item.ID === 121)
         
       if (!servicesMenu || !servicesMenu.child_items) {

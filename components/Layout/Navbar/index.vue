@@ -16,8 +16,8 @@
       @click.native="toggleMobileExpand()"/>
       <div class="absolute md:static z-30 top-0 left-0 right-0 md:h-auto transition-all duration-300 bg-gray-dark/0 md:bg-transparent overflow-hidden md:overflow-visible"
       :class="[mobileExpanded ? 'h-screen' : 'h-0']">
-        <ul class="container mx-auto md:mx-0 relative z-40 min-w-[20%] flex flex-col md:flex-row pt-28 md:pt-0">
-          <li v-for="item in menuData" :key="item.ID">
+        <ul v-if="menu" class="container mx-auto md:mx-0 relative z-40 min-w-[20%] flex flex-col md:flex-row pt-28 md:pt-0">
+          <li v-for="item in menu" :key="item.ID">
             <LayoutNavbarItem :data="item" :isMainParent="true" :isMobileExpanded="mobileExpanded"/>
           </li>
         </ul>
@@ -30,7 +30,6 @@
          </div>
        </div>
       </div>
-      
     </div>
   </div>
 </template>
@@ -55,11 +54,8 @@ export default {
       mobileExpanded: false
     }
   },
-  // components: { NavbarItem, NavbarLogo, NavbarHamburger },
-  computed: {
-    menuData() {
-      return this.$store.getters['getMenus'].items
-    }
+  props:{
+    menu: Array
   },
   methods:{
     toggleMobileExpand(){

@@ -34,7 +34,8 @@ export default {
   ],
 
   plugins: [
-    '~/plugins/formatPageData.js'
+    '~/plugins/formatPageData.js',
+    {src:'~/plugins/fetchGeneralData.js', ssr: true}
   ],
 
   components: true,

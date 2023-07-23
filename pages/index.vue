@@ -9,7 +9,6 @@
       <EffectParallax :parallaxOffset="100" class="!absolute !h-auto overflow-hidden -z-10 top-8 -bottom-24 md:-bottom-[9.75rem] left-0 md:left-1/5 right-0">
         <CommonBackgroundHouse />
       </EffectParallax>
-
       <SectionContent :data="pageData.acf.section_about" class="mb-16 md:mb-36" />
       <SectionCounters :data="pageData.acf.section_counters" />
     </SectionContainer>
@@ -21,13 +20,10 @@
         <SectionRealisations :data="pageData.acf.section_realisations" />
       </template>
     </SectionContainer>
-    <!-- <SectionContainer>
-      <div class="w-full flex flex-wrap gap-10">
-        <SectionContent v-if="pageData.acf.section_text_1" :data="pageData.acf.section_text_1" />
-        <SectionContent v-if="pageData.acf.section_text_2" :data="pageData.acf.section_text_2" />
-      </div>
-    </SectionContainer> -->
-    <div class="h-[200vh]"></div>
+    <SectionContainer class="mb-16 md:mb-36">
+        <SectionContent v-if="pageData.acf.section_text_1 && pageData.acf.section_text_1.content" :titleInline="false" :data="pageData.acf.section_text_1" />
+        <SectionContent v-if="pageData.acf.section_text_2 && pageData.acf.section_text_2.content" class="mt-10" :titleInline="false" :data="pageData.acf.section_text_2" />
+    </SectionContainer>
   </div>
 </template>
 
@@ -46,6 +42,11 @@ export default {
       return { pageData }
     },
   components: { SectionContainer, SectionHeroMain, SectionContent },
+  computed:{
+    generalData(){
+      return this.$store.getters.getGeneral
+    }
+  }
 }
 </script>
 

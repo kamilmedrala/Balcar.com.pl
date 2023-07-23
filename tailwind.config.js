@@ -9,7 +9,10 @@ module.exports = {
     theme: {
       extend: {
         colors: {
-          gold: '#9D7C3E',
+          gold: {
+            light:'#9D7C3E',
+            dark:'#876b36'
+          },
           gray: {
             lightest: '#F7F7F7',
             light: '#DDDDDD',

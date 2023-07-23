@@ -1,12 +1,14 @@
 <template>
-    <div class="content text-gray-dark flex flex-col md:flex-row">
-        <div v-if="data.title" class="shrink-0 md:basis-1/4 pr-5 md:pr-10 mb-5 md:mb-10">
+    <div class="content text-gray-dark flex flex-col flex-wrap"
+    :class="{'md:flex-row':titleInline}">
+        <div v-if="data.title" class="pr-5 md:pr-10 mb-5 md:mb-10"
+        :class="{'shrink-0 md:basis-1/4' :titleInline}">
             <EffectSlide class="!w-fit">
                 <div class="title" v-html="data.title">
                 </div>
             </EffectSlide>
         </div>
-      <p v-if="data.content" class="mb-5 md:mb-10" v-html="data.content">
+      <p v-if="data.content" class="mb-5 md:mb-10" :class="{'md:basis-3/4' :titleInline}" v-html="data.content">
       </p>
 
   </div>
@@ -18,6 +20,10 @@ export default {
         data:{
             type: Object,
             required: true
+        },
+        titleInline: {
+            type: Boolean,
+            default: true
         }
     }
 }
@@ -46,10 +52,10 @@ export default {
 }
 
 .content:deep(a) {
-    @apply text-gold hover:underline
+    @apply text-gold-light hover:underline
 }
 
 .content:deep(em){
-    @apply text-gold not-italic
+    @apply text-gold-light not-italic
 }
 </style>

@@ -15,7 +15,7 @@
       >
         <CommonLink
           :link="data.url"
-          class="block text-gray-lightest md:text-gray-dark text-2xl md:text-base font-light md:font-normal hover:text-gold transition duration-200 overflow-hidden md:overflow-auto"
+          class="block text-gray-lightest md:text-gray-dark text-2xl md:text-base font-light md:font-normal hover:text-gold-light transition duration-200 overflow-hidden md:overflow-auto"
           :class="[
             isMainParent
               ? 'md:p-5 border-0 border-l border-transparent '

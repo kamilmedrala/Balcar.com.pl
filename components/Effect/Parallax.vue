@@ -1,6 +1,6 @@
 <template>
   <div ref="parallaxContainer" class="relative w-full h-full">
-    <div ref="parallaxItem" class="w-full will-change-transform"
+    <div ref="parallaxItem" class="w-full h-full will-change-transform"
     :style="{
         'transform': `translateY(${currentOffset}px)`,
         'height': `calc(100% + ${parallaxOffset}px)`}">

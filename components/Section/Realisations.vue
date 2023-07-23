@@ -1,30 +1,32 @@
 <template>
-  <div class="swiper-realisations overflow-hidden">
+  <div class="swiper-realisations-section">
     <SectionContent class="custom-container relative" :data="data" />
-    <div v-if="data.gallery" class="mx-auto !w-10/12 md:!w-3/5 !aspect-video max-h-[600px] mb-10 overflow-visible">
-      <div
-        ref="swiper"
-        class="swiper swiper-container h-full !overflow-visible"
-      >
-        <div class="swiper-wrapper items-center w-full h-full">
-          <div
-            class="swiper-slide relative mx-2 md:mx-5 w-full shrink-0 overflow-hidden"
-            v-for="image in data.gallery"
-            :key="image.id"
-          >
-          <EffectParallax class="w-full h-full relative z-20" :parallaxOffset="70"
-          data-swiper-parallax="150">
-          <nuxt-picture
-          v-if="image.full_image_url"
-          class="h-full w-full relative z-20"
-          :src="image.full_image_url"
-                  :fit="'cover'"
-                  loading="lazy"
-                  :imgAttrs="{ class: 'w-full h-full object-cover' }"
-                  />
-          </EffectParallax>
-          <div class="absolute inset-0 z-10 bg-gray-light animate-pulse"
-          data-swiper-parallax="150"></div>
+    <div v-if="data.gallery" class="w-full overflow-hidden">
+      <div class="mx-auto !w-10/12 md:!w-3/5 !aspect-video max-h-[600px] mb-10 overflow-visible">
+        <div
+          ref="swiper"
+          class="swiper swiper-container h-full !overflow-visible"
+        >
+          <div class="swiper-wrapper items-center w-full h-full">
+            <div
+              class="swiper-slide relative mx-2 md:mx-5 w-full shrink-0 overflow-hidden"
+              v-for="image in data.gallery"
+              :key="image.id"
+            >
+            <EffectParallax class="w-full h-full relative z-20" :parallaxOffset="70"
+            data-swiper-parallax="150">
+            <nuxt-picture
+            v-if="image.full_image_url"
+            class="h-full w-full relative z-20"
+            :src="image.full_image_url"
+                    :fit="'cover'"
+                    loading="lazy"
+                    :imgAttrs="{ class: 'w-full h-full object-cover' }"
+                    />
+            </EffectParallax>
+            <div class="absolute inset-0 z-10 bg-gray-light animate-pulse"
+            data-swiper-parallax="150"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -79,10 +81,10 @@ export default {
 }
 </script>
 <style scoped>
-.swiper-realisations:deep(.swiper-slide){
+.swiper-realisations-section:deep(.swiper-slide){
   @apply !h-4/5 transition-all duration-700
 }
-.swiper-realisations:deep(.swiper-slide.swiper-slide-active){
+.swiper-realisations-section:deep(.swiper-slide.swiper-slide-active){
   @apply !h-full
 }
 </style>

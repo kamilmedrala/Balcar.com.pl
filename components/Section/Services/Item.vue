@@ -6,7 +6,7 @@
                 <h2 class="text-lg md:text-xl transition duration-300 group-hover:translate-x-2">
                     {{ data.title }}
                 </h2>
-                <span class="transition duration-300 stroke-gold group-hover:stroke-white">
+                <span class="transition duration-300 stroke-gold-light group-hover:stroke-white">
                     <svg width="18" height="33" viewBox="0 0 18 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <line class="stroke-inherit" y1="-0.5" x2="21.7286" y2="-0.5" transform="matrix(-0.676593 0.736358 -0.73795 -0.674856 16.3911 16)" stroke="black"/>
                         <line class="stroke-inherit" y1="-0.5" x2="21.7286" y2="-0.5" transform="matrix(0.676593 0.736358 0.73795 -0.674856 1.68994 0)" stroke="black"/>

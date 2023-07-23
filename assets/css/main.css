@@ -27,6 +27,6 @@
 
 @layer base{
     html,body{
-        @apply font-body font-normal scroll-smooth
+        @apply font-body font-normal scroll-smooth bg-gray-lightest
     }
 }
