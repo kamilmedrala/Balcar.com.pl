@@ -6,10 +6,8 @@
     <LayoutScrollProgress />
     <SectionContainer v-if="generalData.section_contact && showCta" class="mt-auto">
       <SectionCta :data="generalData.section_contact"/>
-      <template #full>
-        <LayoutFooter :menu="footerMenuData" class="mt-10 md:mt-20" />
-      </template>
     </SectionContainer>
+    <LayoutFooter :menu="footerMenuData" class="mt-10 md:mt-20" />
   </div>
 </template>
 
