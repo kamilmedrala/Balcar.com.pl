@@ -4,10 +4,10 @@
     <Nuxt class="relative z-10" />
     <LayoutSocials :general="generalData" />
     <LayoutScrollProgress />
-    <SectionContainer v-if="generalData.section_contact" class="mt-auto">
-      <SectionCta class="mb-10 md:mb-20" :data="generalData.section_contact"/>
+    <SectionContainer v-if="generalData.section_contact && showCta" class="mt-auto">
+      <SectionCta :data="generalData.section_contact"/>
       <template #full>
-        <LayoutFooter :menu="footerMenuData" />
+        <LayoutFooter :menu="footerMenuData" class="mt-10 md:mt-20" />
       </template>
     </SectionContainer>
   </div>
@@ -25,6 +25,9 @@ export default {
     footerMenuData(){
       return this.$store.getters.getMenus.footer.items
     },
+    showCta(){
+      return this.$route.path !== '/kontakt/'
+    }
   }
 }
 </script>
