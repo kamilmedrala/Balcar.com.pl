@@ -1,8 +1,5 @@
 export default {
   target: 'static',
-  router: {
-    base: '/Balcar.com.pl/'
-  },
   publicRuntimeConfig: {
     apiUrl: 'https://api.balcar.com.pl',
     axios: {
@@ -41,6 +38,7 @@ export default {
   components: true,
 
   router:{
+    base: '/Balcar.com.pl/',
     scrollBehavior (to, from, savedPosition) {
       if (savedPosition) {
         return savedPosition
