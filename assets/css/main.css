@@ -15,7 +15,7 @@ a.nuxt-link-exact-active{
 
 .page-enter-active, .page-leave-active,
 .page-home-enter-active, .page-home-leave-active {
-    @apply transition-all duration-700 overflow-x-hidden
+    @apply transition-all duration-700 md:duration-1000 overflow-x-hidden
   }
 
   .page-enter-active,
@@ -24,7 +24,7 @@ a.nuxt-link-exact-active{
   }
   .page-leave-active,
   .page-home-leave-active{
-    @apply z-30 opacity-20 blur-sm brightness-100 contrast-100 grayscale-0 hue-rotate-0 invert-0 saturate-100 sepia-0 shadow-none drop-shadow-none transform-gpu translate-x-0 translate-y-0 skew-x-0 skew-y-0 scale-x-100 scale-y-100
+    @apply z-30 opacity-20 
   }
 
   .page-enter {
