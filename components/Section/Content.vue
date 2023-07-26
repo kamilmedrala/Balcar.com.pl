@@ -67,4 +67,7 @@ export default {
 .content:deep(li){
     @apply mb-5
 }
+.content:deep(ol li){
+    @apply ml-5
+}
 </style>
