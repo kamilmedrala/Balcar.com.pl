@@ -1,6 +1,6 @@
 <template>
   <div class="swiper-realisations-section">
-    <SectionContent class="custom-container relative" :data="data" />
+    <SectionContent class="custom-container relative" :data="data" :titleInline="true" />
     <div v-if="data.gallery" class="w-full overflow-hidden">
       <div class="mx-auto !w-10/12 md:!w-3/5 !aspect-video max-h-[600px] mb-10 overflow-visible">
         <div

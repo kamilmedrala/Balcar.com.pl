@@ -29,7 +29,7 @@
 import {useWindowScroll, useWindowSize} from '@vueuse/core'
 import { computed, onMounted, watch, ref } from 'vue'
 export default {
-setup(){
+setup(props){
     const { x, y } = useWindowScroll()
     const {width: screenWidth, height: screenHeight} = useWindowSize()
     const height = ref(0)
@@ -52,14 +52,15 @@ setup(){
     
     function setDocHeight(){
         if (document) {
-            const documentHeight = document.querySelector('body').clientHeight
+            const documentHeight = document.querySelector('body').offsetHeight
             height.value = documentHeight
         }
     }
 
     function scrollLower(){
         if (window) {
-            window.scrollTo(0,screenHeight.value - 64)
+            const scrollDistance = props.scrollDownVal ? props.scrollDownVal : screenHeight.value - 64
+            window.scrollTo(0,scrollDistance)
         }
     }
 
@@ -69,9 +70,18 @@ setup(){
         }
     }
 
-    return { y, scrollPercent, screenWidth,screenHeight, height ,isMounted, scrollToTop,scrollLower }
+    return { y, scrollPercent, screenWidth,screenHeight, height ,isMounted, scrollToTop,scrollLower,setDocHeight }
+},
+created(){
+    this.$nuxt.$on('transitionEnd',()=>{
+        this.setDocHeight()
+    })
+},
+props:{
+    scrollDownVal: {
+        type: Number
+    }
 }
-
 }
 </script>
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <SectionContent :data="data" />
+    <SectionContent :data="data" :titleInline="true" />
     <div class="flex flex-col mb-10">
       <SectionServicesItem v-for="item in menuServicesChildren" :key="item.ID" :data="item" />
     </div>

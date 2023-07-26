@@ -9,6 +9,42 @@
      url(~assets/fonts/OPTIEdgarBold-Extended.ttf.woff)
 }
 
+a.nuxt-link-exact-active{
+    @apply !text-gold-dark
+}
+
+.page-enter-active, .page-leave-active,
+.page-home-enter-active, .page-home-leave-active {
+    @apply transition-all duration-700 md:duration-1000 overflow-x-hidden
+  }
+
+  .page-enter-active,
+  .page-home-enter-active{
+    @apply z-40 bg-gray-lightest w-screen fixed inset-x-0 top-0 
+  }
+  .page-leave-active,
+  .page-home-leave-active{
+    @apply z-30 opacity-20 blur-lg brightness-100 contrast-100 grayscale-0 hue-rotate-0 invert-0 saturate-100 sepia-0 shadow-none drop-shadow-none
+  }
+
+  .page-enter {
+    @apply translate-x-full
+  }
+  .page-home-enter{
+    @apply -translate-x-full
+  }
+
+  .page-enter-to,
+  .page-home-enter-to {
+    @apply translate-x-0
+  }
+
+@layer base{
+    html,body{
+        @apply font-body font-normal scroll-smooth bg-gray-lightest
+    }
+}
+
 @layer utilities{
 
     .custom-container{
@@ -23,10 +59,4 @@
         @apply brightness-100 contrast-100 grayscale-0 hue-rotate-0 blur-none saturate-100 sepia-0 shadow-none drop-shadow-none
     }
 
-}
-
-@layer base{
-    html,body{
-        @apply font-body font-normal scroll-smooth bg-gray-lightest
-    }
 }

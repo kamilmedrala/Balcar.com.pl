@@ -8,7 +8,10 @@
                 </div>
             </EffectSlide>
         </div>
-      <p v-if="data.content" class="mb-5 md:mb-10" :class="{'md:basis-3/4' :titleInline}" v-html="data.content">
+    
+      <div v-if="data.content && data.content.startsWith('<p>')" class="mb-5 md:mb-10" :class="{'md:basis-3/4' :titleInline}" v-html="data.content">
+      </div>
+      <p v-else-if="data.content" class="mb-5 md:mb-10" :class="{'md:basis-3/4' :titleInline}" v-html="data.content">
       </p>
 
   </div>
@@ -23,15 +26,15 @@ export default {
         },
         titleInline: {
             type: Boolean,
-            default: true
+            default: false
         }
     }
 }
 </script>
 
 <style scoped>
-.content p {
-    @apply text-base md:text-lg
+.content :deep(p) {
+    @apply text-base md:text-lg mb-5 md:mb-10
 }
 
 .content .title {
@@ -57,5 +60,11 @@ export default {
 
 .content:deep(em){
     @apply text-gold-light not-italic
+}
+.content:deep(ol){
+    @apply list-decimal
+}
+.content:deep(li){
+    @apply mb-5
 }
 </style>

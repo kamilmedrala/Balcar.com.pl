@@ -31,6 +31,7 @@ export default {
         },{
             rootMargin: '-50px'
         })
+
         return {target, targetIsVisible}
     },
     props:{
@@ -43,6 +44,16 @@ export default {
             default: 0
         }
     },
+    mounted(){
+        setTimeout(()=>{
+            const elTopOffset = this.$refs.target.getBoundingClientRect().top
+            if (elTopOffset > 0 && elTopOffset < window.innerHeight) {
+                this.targetIsVisible = true
+                this.$emit('visible')
+            }
+        },1000)
+
+    }
 
 }
 </script>

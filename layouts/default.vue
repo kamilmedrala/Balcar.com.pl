@@ -3,7 +3,6 @@
     <LayoutNavbar :menu="topMenuData" />
     <Nuxt class="relative z-10" />
     <LayoutSocials :general="generalData" />
-    <LayoutScrollProgress />
     <SectionContainer v-if="generalData.section_contact && showCta" class="mt-auto">
       <SectionCta :data="generalData.section_contact"/>
     </SectionContainer>

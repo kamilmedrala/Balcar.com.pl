@@ -7,7 +7,7 @@
         </div>
         <div class="relative z-10 flex flex-col md:flex-row gap-10 justify-between items-center md:items-end">
             <div v-if="data.title" 
-            class="text-gray-dark text-3xl md:text-4xl max-w-md" 
+            class="text-gray-dark text-3xl md:text-4xl max-w-md font-semibold" 
             v-html="data.title"></div>
             <UiButton v-if="data.button_text" :link="'/kontakt/'">
             {{ data.button_text }}

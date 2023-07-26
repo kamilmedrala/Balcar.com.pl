@@ -40,6 +40,14 @@ export default {
 
   components: true,
 
+  pageTransition: {
+    name: 'page',
+    mode: '',
+    afterEnter(){
+      $nuxt.$emit('transitionEnd');
+    }
+  },
+
   buildModules: [
     '@nuxt/image',
     '@nuxtjs/axios',

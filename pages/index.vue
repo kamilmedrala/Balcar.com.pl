@@ -9,7 +9,7 @@
       <EffectParallax :parallaxOffset="100" class="!absolute !h-auto overflow-hidden -z-10 top-8 -bottom-24 md:-bottom-[9.75rem] left-0 md:left-1/5 right-0">
         <CommonBackgroundHouse />
       </EffectParallax>
-      <SectionContent :data="pageData.acf.section_about" class="mb-16 md:mb-36" />
+      <SectionContent :data="pageData.acf.section_about" :titleInline="true" class="mb-16 md:mb-36" />
       <SectionCounters :data="pageData.acf.section_counters" />
     </SectionContainer>
     <SectionContainer :id="'uslugi'" :title="'2 - Usługi'" class="mb-20">
@@ -21,9 +21,10 @@
       </template>
     </SectionContainer>
     <SectionContainer class="mb-16 md:mb-36">
-        <SectionContent v-if="pageData.acf.section_text_1 && pageData.acf.section_text_1.content" :titleInline="false" :data="pageData.acf.section_text_1" />
-        <SectionContent v-if="pageData.acf.section_text_2 && pageData.acf.section_text_2.content" class="mt-10" :titleInline="false" :data="pageData.acf.section_text_2" />
+        <SectionContent v-if="pageData.acf.section_text_1 && pageData.acf.section_text_1.content" :data="pageData.acf.section_text_1" />
+        <SectionContent v-if="pageData.acf.section_text_2 && pageData.acf.section_text_2.content" class="mt-10" :data="pageData.acf.section_text_2" />
     </SectionContainer>
+    <CommonScrollProgress />
   </div>
 </template>
 
@@ -46,6 +47,12 @@ export default {
     generalData(){
       return this.$store.getters.getGeneral
     }
+  },
+  transition(to, from) {
+    if (to.name == 'index') {
+      return 'page-home'
+    }
+    return 'page'
   }
 }
 </script>
