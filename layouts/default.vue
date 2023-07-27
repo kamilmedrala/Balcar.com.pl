@@ -3,8 +3,13 @@
     <LayoutNavbar :menu="topMenuData" />
     <Nuxt class="relative z-10" />
     <LayoutSocials :general="generalData" />
-    <SectionContainer v-if="generalData.section_contact && showCta" class="mt-auto">
+    <SectionContainer v-if="generalData.section_contact && showCta" class="mt-auto mb-10 md:mb-[100px]">
       <SectionCta :data="generalData.section_contact"/>
+    </SectionContainer>
+    <SectionContainer v-if="generalData.section_brands || generalData.section_brands_gallery" class="mt-auto">
+      <template #full>
+        <SectionBrands v-if="generalData.section_brands" :data="{...generalData.section_brands,gallery: generalData.section_brands_gallery}" />
+      </template>
     </SectionContainer>
     <LayoutFooter :menu="footerMenuData" class="mt-10 md:mt-20" />
   </div>

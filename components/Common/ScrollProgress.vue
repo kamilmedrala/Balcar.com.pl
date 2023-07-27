@@ -1,5 +1,5 @@
 <template>
-    <div class="hidden md:block fixed h-screen top-0">
+    <div class="hidden md:block fixed h-screen top-0 z-30">
         <div class="flex flex-col border-0 border-r border-solid border-gray-500 h-36 relative top-1/3 left-1 xl:left-5 z-20 transition-opacity duration-200"
         :class="{'opacity-0':height < screenHeight + 200}">
             <div class="relative w-6 h-full -top-24 translate-y-24 text-gray-500 overflow-hidden">

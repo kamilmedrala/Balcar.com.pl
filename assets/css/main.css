@@ -1,62 +1,85 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @font-face {
-    font-family: "OPTIEdgarBold";
-    src: local("OPTIEdgarBold"),
-     url(~assets/fonts/OPTIEdgarBold-Extended.ttf.woff)
+  font-family: 'OPTIEdgarBold';
+  src: local('OPTIEdgarBold'),
+    url(~assets/fonts/OPTIEdgarBold-Extended.ttf.woff);
 }
 
-a.nuxt-link-exact-active{
-    @apply !text-gold-dark
+a.nuxt-link-exact-active {
+  @apply !text-gold-dark;
 }
 
-.page-enter-active, .page-leave-active,
-.page-home-enter-active, .page-home-leave-active {
-    @apply transition-all duration-700 md:duration-1000 overflow-x-hidden
-  }
-
-  .page-enter-active,
-  .page-home-enter-active{
-    @apply z-40 bg-gray-lightest fixed inset-x-0 top-0 h-screen
-  }
-  .page-leave-active,
-  .page-home-leave-active{
-    @apply z-30 opacity-20 
-  }
-
-  .page-enter {
-    @apply transform-gpu translate-x-full translate-y-0 skew-x-0 skew-y-0 scale-x-100 scale-y-100
-  }
-  .page-home-enter{
-    @apply transform-gpu -translate-x-full translate-y-0 skew-x-0 skew-y-0 scale-x-100 scale-y-100
-  }
-
-  .page-enter-to,
-  .page-home-enter-to {
-    @apply transform-gpu translate-x-0 translate-y-0 skew-x-0 skew-y-0 scale-x-100 scale-y-100
-  }
-
-@layer base{
-    html,body{
-        @apply font-body font-normal scroll-smooth bg-gray-lightest
-    }
+.page-enter-active,
+.page-leave-active,
+.page-home-enter-active,
+.page-home-leave-active {
+  @apply transition-all duration-700 md:duration-1000 overflow-x-hidden;
 }
 
-@layer utilities{
+.page-enter-active,
+.page-home-enter-active {
+  @apply z-40 bg-gray-lightest fixed inset-x-0 top-0 h-screen;
+}
+.page-leave-active,
+.page-home-leave-active {
+  @apply z-30 opacity-20;
+}
 
-    .custom-container{
-        @apply container mx-auto px-5 sm:px-10 xl:px-20
-    }
+.page-enter {
+  @apply transform-gpu translate-x-full translate-y-0 skew-x-0 skew-y-0 scale-x-100 scale-y-100;
+}
+.page-home-enter {
+  @apply transform-gpu -translate-x-full translate-y-0 skew-x-0 skew-y-0 scale-x-100 scale-y-100;
+}
 
-    .blur-fix{
-        @apply backdrop-brightness-100 backdrop-contrast-100 backdrop-grayscale-0 backdrop-hue-rotate-0 backdrop-invert-0 backdrop-opacity-100 backdrop-saturate-100 backdrop-sepia-0
-    }
+.page-enter-to,
+.page-home-enter-to {
+  @apply transform-gpu translate-x-0 translate-y-0 skew-x-0 skew-y-0 scale-x-100 scale-y-100;
+}
 
-    .invert-fix{
-        @apply brightness-100 contrast-100 grayscale-0 hue-rotate-0 blur-none saturate-100 sepia-0 shadow-none drop-shadow-none
-    }
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #3b3a37 #f7f7f7;
+}
 
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #f7f7f7;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #3b3a37;
+  border-radius: 0px;
+  border: 2px solid #ffffff;
+}
+
+@layer base {
+  html,
+  body {
+    @apply font-body font-normal scroll-smooth bg-gray-lightest;
+  }
+}
+
+@layer utilities {
+  .custom-container {
+    @apply container mx-auto px-5 sm:px-10 xl:px-20;
+  }
+
+  .blur-fix {
+    @apply backdrop-brightness-100 backdrop-contrast-100 backdrop-grayscale-0 backdrop-hue-rotate-0 backdrop-invert-0 backdrop-opacity-100 backdrop-saturate-100 backdrop-sepia-0;
+  }
+
+  .invert-fix {
+    @apply brightness-100 contrast-100 grayscale-0 hue-rotate-0 blur-none saturate-100 sepia-0 shadow-none drop-shadow-none;
+  }
+
+  .grayscale-fix {
+    @apply brightness-100 contrast-100 invert-0 hue-rotate-0 blur-none saturate-100 sepia-0 shadow-none drop-shadow-none;
+  }
 }

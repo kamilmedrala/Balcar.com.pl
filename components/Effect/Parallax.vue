@@ -2,7 +2,7 @@
   <div ref="parallaxContainer" class="relative w-full h-full">
     <div ref="parallaxItem" class="w-full h-full will-change-transform"
     :style="{
-        'transform': `translateY(${currentOffset}px)`,
+        'transform': `translate3d(0,${currentOffset}px,0)`,
         'height': `calc(100% + ${parallaxOffset}px)`}">
         <slot></slot>
     </div>
