@@ -2,7 +2,7 @@
   <div class="fixed z-50 top-0 inset-x-0">
     
     <div
-    class="absolute bottom-full h-screen w-full backdrop-filter backdrop-blur blur-fix transition-all duration-500"
+    class="absolute bottom-full h-screen w-full backdrop-filter backdrop-blur backdrop-blur-fix transition-all duration-500"
     :class="[
       mobileExpanded ? 'translate-y-full !bg-gray-dark' : 'translate-y-16 ',
       y > 0 ? 'bg-white/50 shadow-md shadow-gray-dark/5' : 'bg-gray-lightest'

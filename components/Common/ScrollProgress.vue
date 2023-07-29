@@ -45,6 +45,9 @@ setup(props){
         setDocHeight()
         isMounted.value = true
     })
+    watch(y,()=>{
+        setDocHeight()
+    })
     watch(screenWidth,()=>{
         setDocHeight()
     })

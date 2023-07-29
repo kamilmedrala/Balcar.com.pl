@@ -1,11 +1,14 @@
 <template>
   <div v-if="pageData.acf && Object.keys(pageData.acf).length > 0">
     <template v-for="section,name in pageData.acf">
-      <SectionBanner v-if="name=='banner'" :title="pageData.title.rendered" :bgImage="section.banner_image" />
-      <section-container v-else :key="name">
-        <component v-if="componentRename[name]" :is="componentRename[name]" :data="section"></component>
+      <SectionBanner v-if="name=='banner'" :title="pageData.title.rendered" :bgImage="section && section.banner_image ? section.banner_image : {}" />
+      <section-container v-else-if="componentRename[name]" :key="name">
+        <component :is="componentRename[name]" :data="section"></component>
       </section-container>
     </template>
+    <section-container v-if="pageData.acf.section_gallery">
+        <SectionGallery :data="pageData.acf.section_gallery"/>
+    </section-container>
     <CommonScrollProgress :scrollDownVal="400" />
   </div>
   <div v-else-if="pageData.content && pageData.content.rendered" class="pt-20">
@@ -28,7 +31,7 @@ export default {
   data(){
     return{
       componentRename: {
-        'section_content':'SectionContent'
+        'section_content':'SectionContent',
       }
 
     }

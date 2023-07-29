@@ -8,9 +8,9 @@
         </div>
         <div class="absolute inset-0 z-0 bg-gray-light md:left-10 xl:left-20 overflow-hidden">
             <EffectParallax :parallaxOffset="100">
-                <nuxt-picture v-if="bgImage"
+                <nuxt-picture v-if="bgImage && bgImage.url"
                 :alt="bgImage.alt ? bgImage.alt : 'Balcar F.H.U image' "
-                :src="bgImage.url" 
+                :src="bgImage.url"
                 fit='cover'
                 class="w-full h-full object-cover "
                 :imgAttrs="{class: 'object-cover w-full h-full'}"
@@ -26,7 +26,7 @@
 <script>
 export default {
     props:{
-        title: String,
+        title: {type: String},
         bgImage: {}
     }
 }

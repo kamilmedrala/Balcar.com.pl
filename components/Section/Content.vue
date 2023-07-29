@@ -1,5 +1,5 @@
 <template>
-    <div class="content text-gray-dark flex flex-col flex-wrap"
+    <div v-if="data" class="content text-gray-dark flex flex-col flex-wrap"
     :class="{'md:flex-row':titleInline}">
         <div v-if="data.title" class="pr-5 md:pr-10 mb-5 md:mb-10"
         :class="{'shrink-0 md:basis-1/4' :titleInline}">
