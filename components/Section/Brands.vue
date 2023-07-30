@@ -15,7 +15,7 @@
               >
               <nuxt-picture
               v-if="image.full_image_url"
-              class="h-full w-full relative grayscale hover:grayscale-0 grayscale-fix transition duration-300"
+              class="h-full w-full relative saturate-0 hover:saturate-100 saturate-fix transition duration-300"
               :src="image.full_image_url"
                       :fit="'contain'"
                       loading="lazy"
