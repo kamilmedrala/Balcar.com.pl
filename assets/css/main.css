@@ -83,7 +83,12 @@ a.nuxt-link-exact-active {
     @apply brightness-100 contrast-100 grayscale-0 hue-rotate-0 blur-none saturate-100 sepia-0 shadow-none drop-shadow-none;
   }
 
-  .saturate-fix {
-    @apply brightness-100 contrast-100 invert-0 hue-rotate-0 blur-none grayscale-0 sepia-0 shadow-none drop-shadow-none;
+  .saturate-effect {
+    filter: saturate(0%);
+    @apply transition duration-300;
+  }
+  
+  .saturate-effect:hover {
+    filter: saturate(100%);
   }
 }

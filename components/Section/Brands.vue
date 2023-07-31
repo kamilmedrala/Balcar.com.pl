@@ -15,11 +15,11 @@
               >
               <nuxt-picture
               v-if="image.full_image_url"
-              class="h-full w-full relative saturate-0 hover:saturate-100 saturate-fix transition duration-300"
+              class="h-full w-full relative transition duration-300"
               :src="image.full_image_url"
                       :fit="'contain'"
                       loading="lazy"
-                      :imgAttrs="{ class: 'w-full h-full object-contain' }"
+                      :imgAttrs="{ class: 'w-full h-full object-contain saturate-effect' }"
                       />
               </div>
             </div>
@@ -62,10 +62,10 @@
   </script>
 
 <style scoped>
-.swiper-brands-section:deep(.swiper-slide picture ){
+.swiper-brands-section:deep(.swiper-slide img ){
   @apply opacity-10 pointer-events-none 
 }
-.swiper-brands-section:deep(.swiper-slide-prev ~ .swiper-slide picture){
+.swiper-brands-section:deep(.swiper-slide-prev ~ .swiper-slide img){
   @apply opacity-50 pointer-events-auto hover:opacity-100
 }
 </style>
