@@ -9,6 +9,9 @@
     <section-container v-if="pageData.acf.section_gallery">
         <SectionGallery :data="pageData.acf.section_gallery"/>
     </section-container>
+    <section-container v-if="pageData.title.rendered == 'Kontakt'">
+        <SectionContactForm/>
+    </section-container>
     <CommonScrollProgress :scrollDownVal="400" />
   </div>
   <div v-else-if="pageData.content && pageData.content.rendered" class="pt-20">
