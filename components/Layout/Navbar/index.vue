@@ -11,7 +11,7 @@
     </div>
 
     <div class="custom-container flex justify-between items-center">
-      <LayoutNavbarLogo class="relative z-50" :expanded="expandLogo || mobileExpanded" :colorInverted="mobileExpanded" @click.native="mobileExpanded ? toggleMobileExpand() : null" />
+      <LayoutNavbarLogo class="relative z-50" :expanded="expandLogo || mobileExpanded || !isHomepage" :colorInverted="mobileExpanded" @click.native="mobileExpanded ? toggleMobileExpand() : null" />
       <LayoutNavbarHamburger :isExpanded="mobileExpanded"
       @click.native="toggleMobileExpand()"/>
       <div class="absolute md:static z-30 top-0 left-0 right-0 md:h-auto transition-all duration-300 bg-gray-dark/0 md:bg-transparent overflow-hidden md:overflow-visible"
@@ -62,6 +62,11 @@ export default {
       if (window.innerWidth<768) {
         this.mobileExpanded = !this.mobileExpanded 
       }
+    }
+  },
+  computed:{
+    isHomepage(){
+      return this.$route.path === '/' 
     }
   }
 }

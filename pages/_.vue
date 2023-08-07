@@ -38,6 +38,11 @@ export default {
       }
 
     }
+  },
+  head(){
+    return{
+      title: 'Balcar - ' + this.pageData.title.rendered
+    }
   }
 }
 </script>

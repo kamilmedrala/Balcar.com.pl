@@ -53,6 +53,11 @@ export default {
       return 'page-home'
     }
     return 'page'
+  },
+  head(){
+    return{
+      title: 'Balcar - Strona Główna'
+    }
   }
 }
 </script>

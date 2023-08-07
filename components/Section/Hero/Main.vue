@@ -11,6 +11,7 @@
                   height="750"
                   class="h-full w-full "
                   :src="image.full_image_url"
+                  :alt="image.title"
                   :fit="'cover'"
                   :imgAttrs="{class: 'w-full h-full object-cover'}"
                 />

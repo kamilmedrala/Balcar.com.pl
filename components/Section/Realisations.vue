@@ -18,7 +18,10 @@
             <nuxt-picture
             v-if="image.full_image_url"
             class="h-full w-full relative z-20"
+            width="960"
+            height="610"
             :src="image.full_image_url"
+            :alt="image.title"
                     :fit="'cover'"
                     loading="lazy"
                     :imgAttrs="{ class: 'w-full h-full object-cover' }"
