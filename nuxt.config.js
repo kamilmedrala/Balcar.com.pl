@@ -22,12 +22,12 @@ export default {
       { name: 'theme-color', content: '#ffffff' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'apple-touch-icon', sizes: '120x120', href: '/apple-touch-icon.png' },
-      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
-      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
-      { rel: 'manifest', href: '/site.webmanifest"' },
-      { rel: 'mask-icon', href: '/safari-pinned-tab.svg',color: "#5bbad5" },
+      { rel: 'icon', type: 'image/x-icon', href: '/Balcar.com.pl/favicon.ico' },
+      { rel: 'apple-touch-icon', sizes: '120x120', href: '/Balcar.com.pl/apple-touch-icon.png' },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/Balcar.com.pl/favicon-32x32.png' },
+      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/Balcar.com.pl/favicon-16x16.png' },
+      { rel: 'manifest', href: '/Balcar.com.pl/site.webmanifest"' },
+      { rel: 'mask-icon', href: '/Balcar.com.pl/safari-pinned-tab.svg', color: "#5bbad5" },
       { rel: 'preconnect', href: "https://fonts.googleapis.com"},
       { rel: 'preconnect', href: "https://fonts.gstatic.com", crossorigin: true},
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;1,300&display=swap'}
@@ -82,6 +82,11 @@ export default {
       },
     },
   },
+
+  sitemap: false,
+  // sitemap:{
+  //   hostname: 'https://balcar.com.pl',
+  // },
 
   image: {
     domains: ['https://api.balcar.com.pl/'],
