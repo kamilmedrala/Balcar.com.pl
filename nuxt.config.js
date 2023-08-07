@@ -26,7 +26,7 @@ export default {
       { rel: 'apple-touch-icon', sizes: '120x120', href: '/Balcar.com.pl/apple-touch-icon.png' },
       { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/Balcar.com.pl/favicon-32x32.png' },
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/Balcar.com.pl/favicon-16x16.png' },
-      { rel: 'manifest', href: '/Balcar.com.pl/site.webmanifest"' },
+      { rel: 'manifest', href: '/Balcar.com.pl/site.webmanifest' },
       { rel: 'mask-icon', href: '/Balcar.com.pl/safari-pinned-tab.svg', color: "#5bbad5" },
       { rel: 'preconnect', href: "https://fonts.googleapis.com"},
       { rel: 'preconnect', href: "https://fonts.gstatic.com", crossorigin: true},
