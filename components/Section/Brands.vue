@@ -17,9 +17,10 @@
               v-if="image.full_image_url"
               class="h-full w-full relative transition duration-300"
               height="90"
+              width="100"
               :src="image.full_image_url"
               :alt="image.title"
-                      :fit="'contain'"
+                      :fit="'inside'"
                       loading="lazy"
                       :imgAttrs="{ class: 'w-full h-full object-contain saturate-effect' }"
                       />
