@@ -16,7 +16,9 @@
               <nuxt-picture
               v-if="image.full_image_url"
               class="h-full w-full relative transition duration-300"
+              height="90"
               :src="image.full_image_url"
+              :alt="image.title"
                       :fit="'contain'"
                       loading="lazy"
                       :imgAttrs="{ class: 'w-full h-full object-contain saturate-effect' }"

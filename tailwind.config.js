@@ -23,7 +23,9 @@ module.exports = {
           'logo': ['OPTIEdgarBold','Titillium Web','ui-sans-serif', 'system-ui','-apple-system', 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell', 'Noto Sans', 'sans-serif'],
           'body': ['Titillium Web','ui-sans-serif', 'system-ui','-apple-system', 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell', 'Noto Sans', 'sans-serif']
         },
-
+        screens:{
+          'xs': '480px'
+        }
       },
     },
     plugins: [],

@@ -4,16 +4,17 @@
       <div class="h-full">
         <div v-if="data.gallery" ref="swiper" class="swiper swiper-container w-full h-full">
           <div class="swiper-wrapper w-full h-full">
-            <div class="swiper-slide w-full h-full" v-for="image in data.gallery" :key="image.id">
+            <div class="swiper-slide w-full h-full" v-for="image,index in data.gallery" :key="image.id">
               <EffectParallax :parallaxOffset="150">
                 <nuxt-picture v-if="image.full_image_url"
                   width="1440"
                   height="750"
-                  class="h-full w-full "
+                  class="h-full w-full"
                   :src="image.full_image_url"
                   :alt="image.title"
                   :fit="'cover'"
                   :imgAttrs="{class: 'w-full h-full object-cover'}"
+                  :loading="index>0? 'lazy':'eager' "
                 />
               </EffectParallax>
             </div>
@@ -38,7 +39,7 @@
 </template>
 
 <script>
-import { Swiper, Pagination, Autoplay } from 'swiper'
+import { Swiper, Pagination, Autoplay, Lazy } from 'swiper'
 import 'swiper/swiper-bundle.min.css'
 
 export default {
@@ -48,18 +49,23 @@ export default {
             required: true
         }
     },
+
     data() {
     return {
       swiper: null,
       swiperOptionsObject: {
-        modules: [ Autoplay, Pagination],
+        modules: [ Autoplay, Pagination, Lazy],
         slidesPerView: 'auto',
         centeredSlides: true,
         grabCursor: 'true',
         autoplay: {
-          delay: 4000,
+          delay: 6000,
           disableOnInteraction: false,
         },
+        lazy: {
+            loadPrevNext: true,
+            loadOnTransitionStart: true
+          },
         speed: 1000,
         pagination: {
           el: ".swiper-pagination",

@@ -18,6 +18,7 @@ export default {
       { hid: 'description', name: 'description', 
         content: 'Profesjonalne usługi remontowo-budowlane, wykończenia, ocieplenia i wiele innych. Nasz doświadczony zespół wykonawców dostarczy kompleksowe rozwiązania dla Twojego projektu budowlanego!' 
       },
+      { hid: 'og-desc', property: 'og:description', content: 'Profesjonalne usługi remontowo-budowlane, wykończenia, ocieplenia i wiele innych. Nasz doświadczony zespół wykonawców dostarczy kompleksowe rozwiązania dla Twojego projektu budowlanego!' },
       { name: 'format-detection', content: 'telephone=no' },
       { name: 'theme-color', content: '#ffffff' }
     ],
@@ -60,6 +61,7 @@ export default {
   buildModules: [
     '@nuxt/image',
     '@nuxtjs/axios',
+    '@/modules/generateSitemap'
   ],
 
   modules: [
@@ -83,12 +85,12 @@ export default {
     },
   },
 
-  sitemap: false,
-  // sitemap:{
-  //   hostname: 'https://balcar.com.pl',
-  // },
+  sitemap:{
+    hostname: 'https://balcar.com.pl',
+  },
 
   image: {
     domains: ['https://api.balcar.com.pl/'],
+    format: ['webp']
   },
 }

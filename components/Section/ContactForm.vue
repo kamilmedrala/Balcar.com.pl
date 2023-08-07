@@ -32,6 +32,7 @@
             :type="'tel'"
             :name="'your-tel'"
             :text="'Nr telefonu'"
+            :required="true"
           />
           <UiTextarea
             ref="message"

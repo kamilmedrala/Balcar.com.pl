@@ -40,8 +40,17 @@ export default {
     }
   },
   head(){
+    let meta = []
+
+    if (this.pageData?.acf?.banner?.banner_image?.url) {
+      meta.push({ hid: 'og-image', property: 'og:image',
+        content: this.pageData.acf.banner.banner_image.url
+      })
+    }
+
     return{
-      title: 'Balcar - ' + this.pageData.title.rendered
+      title: 'Balcar - ' + this.pageData.title.rendered,
+      meta: meta
     }
   }
 }

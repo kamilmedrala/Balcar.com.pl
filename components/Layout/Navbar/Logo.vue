@@ -2,6 +2,8 @@
     <nuxt-link to="/" class="p-2 pl-0 flex"
     @click.native="scrollTop()">
         <nuxt-picture
+        width="49"
+        height="48"
             :src="'/images/Balcar_logo_part.png'" 
             title="" 
             alt="Balcar logo" 
@@ -9,6 +11,8 @@
             :imgAttrs="{class: 'h-12 object-cover object-left'}"
             />
         <nuxt-picture
+        width="150"
+        height="48"
             :src="'/images/Balcar_logo_text.png'" 
             title="" 
             alt="Balcar logo" 

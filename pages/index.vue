@@ -55,8 +55,23 @@ export default {
     return 'page'
   },
   head(){
+    let meta = []
+
+    if (this.pageData?.acf?.section_banner?.gallery[0]?.full_image_url) {
+      meta.push({ hid: 'og-image', property: 'og:image',
+        content: this.pageData.acf.section_banner.gallery[0].full_image_url
+      })
+    }
+
+    if (this.pageData?.title?.rendered) {
+      meta.push({ hid: 'og-title', property: 'og:title',
+        content: this.pageData.title.rendered
+      })
+    }
+
     return{
-      title: 'Balcar - Strona Główna'
+      title: 'Balcar - Strona Główna',
+      meta: meta
     }
   }
 }

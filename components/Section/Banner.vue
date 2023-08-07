@@ -12,7 +12,8 @@
                 :alt="bgImage.alt ? bgImage.alt : 'Balcar F.H.U image' "
                 :src="bgImage.url"
                 fit='cover'
-                class="w-full h-full object-cover "
+                class="w-full h-full object-cover"
+                loading='eager'
                 :imgAttrs="{class: 'object-cover w-full h-full'}"
                 />
             </EffectParallax>
