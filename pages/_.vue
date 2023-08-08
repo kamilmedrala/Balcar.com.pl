@@ -48,8 +48,14 @@ export default {
       })
     }
 
+    if (this.pageData?.title?.rendered) {
+      meta.push({ hid: 'og-title', property: 'og:title',
+        content: 'Balcar | ' + this.pageData.title.rendered
+      })
+    }
+
     return{
-      title: 'Balcar - ' + this.pageData.title.rendered,
+      title: 'Balcar | ' + this.pageData.title.rendered,
       meta: meta
     }
   }
