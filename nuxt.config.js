@@ -91,6 +91,5 @@ export default {
 
   image: {
     domains: ['https://api.balcar.com.pl/'],
-    format: ['webp']
   },
 }

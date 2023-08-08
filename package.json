@@ -15,6 +15,7 @@
     "lintfix": "prettier --write --list-different . && npm run lint:js -- --fix"
   },
   "dependencies": {
+    "@abbo/nuxt-google-analytics": "^2.5.0",
     "@nuxt/image": "^0.7.1",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/sitemap": "^2.4.0",

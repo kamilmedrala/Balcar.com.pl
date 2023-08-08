@@ -3,12 +3,13 @@
     <nuxt-picture
       class="hidden md:block relative h-20 w-20 md:h-40 md:w-40 pr-2.5 md:pr-5"
       src="/images/Balcar_logo_part.png"
+      format="webp"
       :fit="'contain'"
       :imgAttrs="{ class: 'w-full h-full object-contain' }"
     />
 
     <div class="relative w-fit">
-      <div class="flex flex-col md:items-center mt-5">
+      <div class="flex flex-col md:items-center md:mt-5">
         <h1 class=" text-3xl md:text-6xl font-extrabold font-logo text-gray-dark">BALCAR</h1>
         <p class="text-gray-dark text-sm md:text-base tracking-widest">
           usługi remontowo-budowlane i ocieplenia

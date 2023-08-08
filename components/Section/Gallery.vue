@@ -1,19 +1,19 @@
 <template>
     <div class="mb-20 md:mb-[100px]">
         <div class="flex flex-wrap gap-1 md:gap-5">
-            <div class="group basis-auto max-w-full grow shrink-0 relative h-[150px] md:h-[225px] lg:h-[300px] overflow-hidden" v-for="image,index in data" :key="image.id"
+            <div class="group basis-auto min-w-[calc(33.333%_-_12px)] md:min-w-[calc(25%_-_60px)] max-w-full grow shrink-0 relative h-[150px] md:h-[225px] lg:h-[300px] overflow-hidden" v-for="image,index in data" :key="image.id"
             :style="{'animation-delay': index * 100 + 'ms'}">
             <nuxt-img
                 height="20"
-                :format="'webp'"
+                format="webp"
                 :quality="1"
-                class="h-full w-auto object-cover blur-lg blur-fix text-[0px]"
+                class="h-full w-full object-cover blur-lg blur-fix text-[0px]"
                 :src="image.full_image_url"
                 :alt="image.title" />
             <nuxt-picture
                 height="300"
                 width="400"
-                :format="'webp'"
+                format="webp"
                 :quality="80"
                 loading="lazy"
                 class="absolute inset-0 object-cover text-[0px]"

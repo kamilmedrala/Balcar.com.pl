@@ -1,8 +1,14 @@
 <template>
   <div class="swiper-realisations-section">
-    <SectionContent class="custom-container relative" :data="data" :titleInline="true" />
+    <SectionContent
+      class="custom-container relative"
+      :data="data"
+      :titleInline="true"
+    />
     <div v-if="data.gallery" class="w-full overflow-hidden">
-      <div class="mx-auto !w-10/12 md:!w-3/5 !aspect-video max-h-[600px] mb-10 overflow-visible">
+      <div
+        class="mx-auto !w-10/12 md:!w-3/5 !aspect-video max-h-[600px] mb-10 overflow-visible"
+      >
         <div
           ref="swiper"
           class="swiper swiper-container h-full !overflow-visible"
@@ -13,22 +19,28 @@
               v-for="image in data.gallery"
               :key="image.id"
             >
-            <EffectParallax class="w-full h-full relative z-20" :parallaxOffset="70"
-            data-swiper-parallax="150">
-            <nuxt-picture
-            v-if="image.full_image_url"
-            class="h-full w-full relative z-20"
-            width="960"
-            height="610"
-            :src="image.full_image_url"
-            :alt="image.title"
-                    :fit="'cover'"
-                    loading="lazy"
-                    :imgAttrs="{ class: 'w-full h-full object-cover' }"
-                    />
-            </EffectParallax>
-            <div class="absolute inset-0 z-10 bg-gray-light animate-pulse"
-            data-swiper-parallax="150"></div>
+              <EffectParallax
+                class="w-full h-full relative z-20"
+                :parallaxOffset="70"
+                data-swiper-parallax="150"
+              >
+                <nuxt-picture
+                  v-if="image.full_image_url"
+                  class="h-full w-full relative z-20"
+                  width="960"
+                  height="610"
+                  format="webp"
+                  :src="image.full_image_url"
+                  :alt="image.title"
+                  :fit="'cover'"
+                  loading="lazy"
+                  :imgAttrs="{ class: 'w-full h-full object-cover' }"
+                />
+              </EffectParallax>
+              <div
+                class="absolute inset-0 z-10 bg-gray-light animate-pulse"
+                data-swiper-parallax="150"
+              ></div>
             </div>
           </div>
         </div>
@@ -45,7 +57,7 @@
   </div>
 </template>
 <script>
-import { Swiper, Parallax, Autoplay, Lazy } from 'swiper';
+import { Swiper, Parallax, Autoplay, Lazy } from 'swiper'
 import UiButton from '~/components/Ui/Button.vue'
 export default {
   components: {
@@ -62,7 +74,7 @@ export default {
       swiper: null,
       swiperOptionsObject: {
         slidesPerView: 'auto',
-        modules: [ Autoplay, Parallax, Lazy],
+        modules: [Autoplay, Parallax, Lazy],
         centeredSlides: true,
         grabCursor: 'true',
         autoplay: {
@@ -74,7 +86,7 @@ export default {
           loadPrevNext: true,
         },
         loop: true,
-        parallax: true
+        parallax: true,
       },
     }
   },
@@ -84,10 +96,10 @@ export default {
 }
 </script>
 <style scoped>
-.swiper-realisations-section:deep(.swiper-slide){
-  @apply !h-4/5 transition-all duration-700
+.swiper-realisations-section:deep(.swiper-slide) {
+  @apply !h-4/5 transition-all duration-700;
 }
-.swiper-realisations-section:deep(.swiper-slide.swiper-slide-active){
-  @apply !h-full
+.swiper-realisations-section:deep(.swiper-slide.swiper-slide-active) {
+  @apply !h-full;
 }
 </style>

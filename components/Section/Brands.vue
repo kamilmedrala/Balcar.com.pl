@@ -18,6 +18,7 @@
               class="h-full w-full relative transition duration-300"
               height="90"
               width="100"
+              format="webp"
               :src="image.full_image_url"
               :alt="image.title"
                       :fit="'inside'"

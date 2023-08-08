@@ -11,6 +11,7 @@
                 <nuxt-picture v-if="bgImage && bgImage.url"
                 :alt="bgImage.alt ? bgImage.alt : 'Balcar F.H.U image' "
                 :src="bgImage.url"
+                format="webp"
                 fit='cover'
                 class="w-full h-full object-cover"
                 loading='eager'
