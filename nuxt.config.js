@@ -85,6 +85,10 @@ export default {
     },
   },
 
+  generate:{
+    interval: 500
+  },
+
   sitemap:{
     hostname: 'https://balcar.com.pl',
   },
