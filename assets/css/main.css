@@ -14,29 +14,29 @@ a.nuxt-link-exact-active {
 
 .page-enter-active,
 .page-leave-active,
-.page-home-enter-active,
-.page-home-leave-active {
+.page-back-enter-active,
+.page-back-leave-active {
   @apply transition-all duration-700 md:duration-1000 overflow-x-hidden;
 }
 
 .page-enter-active,
-.page-home-enter-active {
+.page-back-enter-active {
   @apply z-40 bg-gray-lightest fixed inset-x-0 top-0 h-screen;
 }
 .page-leave-active,
-.page-home-leave-active {
+.page-back-leave-active {
   @apply z-30 opacity-20;
 }
 
 .page-enter {
   @apply transform-gpu translate-x-full translate-y-0 skew-x-0 skew-y-0 scale-x-100 scale-y-100;
 }
-.page-home-enter {
+.page-back-enter {
   @apply transform-gpu -translate-x-full translate-y-0 skew-x-0 skew-y-0 scale-x-100 scale-y-100;
 }
 
 .page-enter-to,
-.page-home-enter-to {
+.page-back-enter-to {
   @apply transform-gpu translate-x-0 translate-y-0 skew-x-0 skew-y-0 scale-x-100 scale-y-100;
 }
 

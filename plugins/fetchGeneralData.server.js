@@ -10,6 +10,9 @@ export default async ({ store, $axios }) => {
     const generalData = await $axios.$get('/acf/v3/settings-custom/81')
     store.commit('setGeneral', generalData.acf)
 
+    const offersData = await $axios.$get('/wp/v2/job-offers')
+    store.commit('setOffers', offersData)
+
   } catch (error) {
     console.error('Error fetching data:', error);
   }

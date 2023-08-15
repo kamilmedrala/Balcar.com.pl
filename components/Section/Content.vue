@@ -54,6 +54,10 @@ export default {
     @apply text-xl md:text-2xl
 }
 
+.content :deep(h4){
+    @apply text-lg md:text-xl mb-5
+}
+
 .content:deep(a) {
     @apply text-gold-light hover:underline
 }
@@ -64,10 +68,10 @@ export default {
 .content:deep(ol){
     @apply list-decimal
 }
-.content:deep(li){
-    @apply mb-5
+.content:deep(ul){
+    @apply list-disc mb-10
 }
-.content:deep(ol li){
-    @apply ml-5
+.content:deep(li){
+    @apply ml-5 mb-4
 }
 </style>

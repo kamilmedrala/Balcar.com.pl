@@ -48,12 +48,6 @@ export default {
       return this.$store.getters.getGeneral
     }
   },
-  transition(to, from) {
-    if (to.name == 'index') {
-      return 'page-home'
-    }
-    return 'page'
-  },
   head(){
     let meta = []
 

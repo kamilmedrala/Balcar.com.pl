@@ -4,7 +4,8 @@ export const state = () => ({
     top: {},
     footer: {}
   },
-  general: {}
+  general: {},
+  offers:[]
 })
 
 
@@ -16,6 +17,10 @@ export const getters = {
   getGeneral(state) {
     return state.general
   },
+
+  getOffers(state) {
+    return state.offers
+  },
 }
 
 export const mutations = {
@@ -25,8 +30,10 @@ export const mutations = {
   setFooterMenu(state, data ) {    
     state.menus.footer = data
   },
-
   setGeneral(state, data ) {    
     state.general = data
+  },
+  setOffers(state, data ) {    
+    state.offers = data
   },
 }
