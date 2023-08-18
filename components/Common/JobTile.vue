@@ -13,7 +13,7 @@
             :imgAttrs="{class: 'w-full h-full object-cover'}"
             />
         </div>
-        <div class="absolute top-0 bottom-5 inset-x-0 z-10 pointer-events-none bg-gradient-to-t from-gray-lightest "></div>
+        <div class="absolute top-0 bottom-5 inset-x-0 z-10 pointer-events-none bg-gradient-to-t from-gray-lightest from-100% to-0% "></div>
     </CommonLink>
 </template>
 <script>
