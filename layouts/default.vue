@@ -11,6 +11,7 @@
         <SectionBrands v-if="generalData.section_brands" :data="{...generalData.section_brands,gallery: generalData.section_brands_gallery}" />
       </template>
     </SectionContainer>
+    <CommonPopupCookies />
     <LayoutFooter :menu="footerMenuData" class="mt-10 md:mt-20" />
   </div>
 </template>

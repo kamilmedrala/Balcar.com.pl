@@ -61,12 +61,25 @@ export default {
   buildModules: [
     '@nuxt/image',
     '@nuxtjs/axios',
+    '@abbo/nuxt-google-analytics',
     '@/modules/generateSitemap'
   ],
 
   modules: [
     '@nuxtjs/sitemap'
   ],
+
+  googleAnalytics: {
+    id: 'G-6SPE57R2M1', //process.env.GOOGLE_ANALYTICS_ID,
+    useGtag: true,
+    enabled: false,
+    debug: {
+      sendHitTask: true
+    },
+    autoTracking: {
+      screenview: true
+    }
+  },
 
   build: {
     standalone: true,
@@ -86,7 +99,7 @@ export default {
   },
 
   generate:{
-    interval: 500
+    interval: 1000
   },
 
   sitemap:{
