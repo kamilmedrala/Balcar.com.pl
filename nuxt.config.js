@@ -44,11 +44,10 @@ export default {
     '~/plugins/fetchGeneralData.server.js'
   ],
 
-  components: {
-    dirs: [
+  components: [
       '~/components',
-    ]
-  },
+      { path: '~/components/ui/', prefix: 'ui' }
+    ],
 
   // router:{
   //   base: '/Balcar.com.pl/',
