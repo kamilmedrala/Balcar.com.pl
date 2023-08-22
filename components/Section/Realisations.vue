@@ -58,11 +58,7 @@
 </template>
 <script>
 import { Swiper, Parallax, Autoplay, Lazy } from 'swiper'
-import UiButton from '~/components/Ui/Button.vue'
 export default {
-  components: {
-    UiButton,
-  },
   props: {
     data: {
       type: Object,

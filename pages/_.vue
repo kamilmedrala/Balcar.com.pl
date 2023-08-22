@@ -32,7 +32,6 @@
 </template>
 
 <script>
-import SectionContainer from '~/components/Section/Container.vue'
 export default {
   async asyncData({ $axios, $formatPageData, route }) {
     let isJobOffer =
@@ -62,7 +61,6 @@ export default {
     return 'page'
   },
 
-  components: { SectionContainer },
   data() {
     return {
       componentRename: {

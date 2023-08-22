@@ -12,11 +12,7 @@
   </div>
 </template>
 <script>
-import UiButton from '~/components/Ui/Button.vue'
 export default {
-  components:{
-    UiButton,
-  },
   props:{
     data: {
       type:Object,

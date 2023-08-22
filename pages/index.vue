@@ -29,12 +29,6 @@
 </template>
 
 <script>
-import SectionContainer from '~/components/Section/Container.vue'
-import SectionHeroMain from '~/components/Section/Hero/Main.vue'
-import SectionContent from '~/components/Section/Content.vue'
-import SectionCounters from '~/components/Section/Counters.vue'
-import SectionServices from '~/components/Section/Services/index.vue'
-import SectionRealisations from '~/components/Section/Realisations.vue'
 
 export default {
   async asyncData({ $axios, $formatPageData }) {
@@ -42,7 +36,6 @@ export default {
       $formatPageData(pageData)
       return { pageData }
     },
-  components: { SectionContainer, SectionHeroMain, SectionContent },
   computed:{
     generalData(){
       return this.$store.getters.getGeneral
