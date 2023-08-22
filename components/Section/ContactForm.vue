@@ -7,27 +7,27 @@
         :class="{ 'opacity-50 pointer-events-none': isPending }"
       >
         <form ref="form" class="flex flex-wrap gap-5" @submit.prevent>
-          <UiPrimarInput
+          <UiPrimaryInput
             ref="name"
             :type="'text'"
             :name="'your-name'"
             :text="'Imię i nazwisko'"
             :required="true"
           />
-          <UiPrimarInput
+          <UiPrimaryInput
             ref="company"
             :type="'text'"
             :name="'company-name'"
             :text="'Nazwa firmy (opcjonalne)'"
           />
-          <UiPrimarInput
+          <UiPrimaryInput
             ref="email"
             :type="'email'"
             :name="'your-email'"
             :text="'Adres e-mail'"
             :required="true"
           />
-          <UiPrimarInput
+          <UiPrimaryInput
             ref="tel"
             :type="'tel'"
             :name="'your-tel'"
@@ -142,7 +142,7 @@ export default {
 
       for (let i = 0; i < inputsArray.length; i++) {
         const input = inputsArray[i]
-        if (['<UiPrimarInput>', '<UiPrimaryTextarea>'].includes(input._name)) {
+        if (['<UiPrimaryInput>', '<UiPrimaryTextarea>'].includes(input._name)) {
           input.validate()
           if (input.isValid === false) {
             isValid = false
