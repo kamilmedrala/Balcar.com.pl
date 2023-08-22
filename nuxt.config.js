@@ -46,9 +46,9 @@ export default {
 
   components: true,
 
-  router:{
-    base: '/Balcar.com.pl/',
-  },
+  // router:{
+  //   base: '/Balcar.com.pl/',
+  // },
   
   pageTransition: {
     name: 'page',
