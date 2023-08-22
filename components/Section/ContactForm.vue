@@ -7,34 +7,34 @@
         :class="{ 'opacity-50 pointer-events-none': isPending }"
       >
         <form ref="form" class="flex flex-wrap gap-5" @submit.prevent>
-          <UiInput
+          <UiPrimarInput
             ref="name"
             :type="'text'"
             :name="'your-name'"
             :text="'Imię i nazwisko'"
             :required="true"
           />
-          <UiInput
+          <UiPrimarInput
             ref="company"
             :type="'text'"
             :name="'company-name'"
             :text="'Nazwa firmy (opcjonalne)'"
           />
-          <UiInput
+          <UiPrimarInput
             ref="email"
             :type="'email'"
             :name="'your-email'"
             :text="'Adres e-mail'"
             :required="true"
           />
-          <UiInput
+          <UiPrimarInput
             ref="tel"
             :type="'tel'"
             :name="'your-tel'"
             :text="'Nr telefonu'"
             :required="true"
           />
-          <UiTextarea
+          <UiPrimaryTextarea
             ref="message"
             :name="'your-message'"
             :text="'Treść wiadomości'"
@@ -46,9 +46,9 @@
             Twoje dane przetważamy zgodnie z naszą <b>polityką prywatności</b>.
           </p>
 
-          <UiButton class="ml-auto" @click.native="sendForm()" :class="{'animate-pulse':isPending}">
+          <UiPrimaryButton class="ml-auto" @click.native="sendForm()" :class="{'animate-pulse':isPending}">
             Wyślij
-          </UiButton>
+          </UiPrimaryButton>
         </form>
       </div>
       <Transition name="fade">
@@ -142,7 +142,7 @@ export default {
 
       for (let i = 0; i < inputsArray.length; i++) {
         const input = inputsArray[i]
-        if (['<UiInput>', '<UiTextarea>'].includes(input._name)) {
+        if (['<UiPrimarInput>', '<UiPrimaryTextarea>'].includes(input._name)) {
           input.validate()
           if (input.isValid === false) {
             isValid = false

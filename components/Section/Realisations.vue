@@ -50,9 +50,9 @@
       v-if="data.button && data.button.link && data.button.text"
       class="w-full custom-container"
     >
-      <UiButton :link="data.button.link.url" class="mx-auto">
+      <UiPrimaryButton :link="data.button.link.url" class="mx-auto">
         {{ data.button.text }}
-      </UiButton>
+      </UiPrimaryButton>
     </div>
   </div>
 </template>

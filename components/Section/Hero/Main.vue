@@ -26,9 +26,9 @@
       <div class="absolute inset-0 custom-container z-10 pointer-events-none flex justify-between items-end">
         <div class="relative z-10 pointer-events-auto md:shrink-0 mb-10 md:w-min sm:w-fit md:min-w-[40%] md:pl-5 py-6 pr-10">
           <CommonLogoBig class="z-10 mb-7" />
-          <UiButton v-if="data.button &&  data.button.link?.url" :link="data.button.link.url" class="z-10 mx-auto" >
+          <UiPrimaryButton v-if="data.button &&  data.button.link?.url" :link="data.button.link.url" class="z-10 mx-auto" >
             {{data.button.text}}
-          </UiButton>
+          </UiPrimaryButton>
           <div
             class="absolute z-0 top-0 bottom-0 right-0 -left-[50vw] md:left-0 bg-gray-lightest/80 backdrop-blur-sm backdrop-blur-fix"
           ></div>

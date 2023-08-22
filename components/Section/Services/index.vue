@@ -5,9 +5,9 @@
       <SectionServicesItem v-for="item in menuServicesChildren" :key="item.ID" :data="item" />
     </div>
     <div v-if="data.button && data.button.link && data.button.text" class="w-full">
-      <UiButton :link="data.button.link.url" class="mx-auto">
+      <UiPrimaryButton :link="data.button.link.url" class="mx-auto">
         {{ data.button.text }}
-      </UiButton>
+      </UiPrimaryButton>
     </div>
   </div>
 </template>
