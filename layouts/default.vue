@@ -29,7 +29,7 @@ export default {
       return this.$store.getters.getMenus.footer.items
     },
     showCta(){
-      return this.$route.path !== '/kontakt/'
+      return this.$route.path !== '/kontakt/' && this.$route.path !== '/kontakt'
     }
   }
 }
