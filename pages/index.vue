@@ -52,12 +52,12 @@ export default {
 
     if (this.pageData?.title?.rendered) {
       meta.push({ hid: 'og-title', property: 'og:title',
-        content: 'Balcar | ' + this.pageData.title.rendered
+        content: 'Balcar usługi remontowo-budowlane i ocieplenia'
       })
     }
 
     return{
-      title: 'Balcar | Strona Główna',
+      title: 'Balcar usługi remontowo-budowlane i ocieplenia',
       meta: meta
     }
   }

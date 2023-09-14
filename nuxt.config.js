@@ -16,9 +16,9 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', 
-        content: 'Profesjonalne usługi remontowo-budowlane, wykończenia, ocieplenia i wiele innych. Nasz doświadczony zespół wykonawców dostarczy kompleksowe rozwiązania dla Twojego projektu budowlanego!' 
+        content: 'Profesjonalne usługi remontowe, budowlane, wykończenia, ocieplenia i wiele innych. Nasz doświadczony zespół wykonawców dostarczy kompleksowe rozwiązania dla Twojego projektu budowlanego!' 
       },
-      { hid: 'og-desc', property: 'og:description', content: 'Profesjonalne usługi remontowo-budowlane, wykończenia, ocieplenia i wiele innych. Nasz doświadczony zespół wykonawców dostarczy kompleksowe rozwiązania dla Twojego projektu budowlanego!' },
+      { hid: 'og-desc', property: 'og:description', content: 'Profesjonalne usługi remontowe, budowlane, wykończenia, ocieplenia i wiele innych. Nasz doświadczony zespół wykonawców dostarczy kompleksowe rozwiązania dla Twojego projektu budowlanego!' },
       { name: 'format-detection', content: 'telephone=no' },
       { name: 'theme-color', content: '#ffffff' }
     ],
