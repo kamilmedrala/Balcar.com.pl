@@ -1,34 +1,44 @@
 <template>
-  <div v-if="pageData && pageData.acf && Object.keys(pageData.acf).length > 0">
-    <template v-for="(section, name) in pageData.acf">
-      <SectionBanner
-        v-if="name == 'banner'"
-        :title="pageData.title.rendered"
-        :bgImage="section && section.banner_image ? section.banner_image : {}"
-      />
-      <section-container v-else-if="componentRename[name]" :key="name">
-        <component :is="componentRename[name]" :data="section"></component>
+  <div>
+
+    <div v-if="pageData && pageData.acf && Object.keys(pageData.acf).length > 0">
+      <template v-for="(section, name) in pageData.acf">
+        <SectionBanner
+          v-if="name == 'banner'"
+          :title="pageData.title.rendered"
+          :bgImage="section && section.banner_image ? section.banner_image : {}"
+        />
+        <section-container v-else-if="componentRename[name]" :key="name">
+          <component :is="componentRename[name]" :data="section"></component>
+        </section-container>
+      </template>
+      <section-container v-if="pageData.acf.section_gallery">
+        <SectionGallery :data="pageData.acf.section_gallery" />
       </section-container>
-    </template>
-    <section-container v-if="pageData.acf.section_gallery">
-      <SectionGallery :data="pageData.acf.section_gallery" />
+      <section-container v-if="pageData.title.rendered == 'Kontakt'">
+        <SectionContactForm />
+      </section-container>
+      <section-container v-if="pageData.acf.show_jobs === true">
+        <SectionJobOffers />
+      </section-container>
+      <CommonScrollProgress :scrollDownVal="400" />
+    </div>
+    
+    <div v-else-if="pageData.content && pageData.content.rendered" class="pt-20">
+      <section-container class="mb-20">
+        <h1 class="text-gray-dark text-4xl md:text-5xl mb-10">
+          {{ pageData.title.rendered }}
+        </h1>
+        <SectionContent :data="{ content: pageData.content.rendered }" />
+      </section-container>
+    </div>
+
+    <section-container v-if="generalData.section_contact && showCta" class="mt-auto mb-10 md:mb-[100px]">
+      <SectionCta :data="generalData.section_contact"/>
     </section-container>
-    <section-container v-if="pageData.title.rendered == 'Kontakt'">
-      <SectionContactForm />
-    </section-container>
-    <section-container v-if="pageData.acf.show_jobs === true">
-      <SectionJobOffers />
-    </section-container>
-    <CommonScrollProgress :scrollDownVal="400" />
   </div>
-  <div v-else-if="pageData.content && pageData.content.rendered" class="pt-20">
-    <section-container class="mb-20">
-      <h1 class="text-gray-dark text-4xl md:text-5xl mb-10">
-        {{ pageData.title.rendered }}
-      </h1>
-      <SectionContent :data="{ content: pageData.content.rendered }" />
-    </section-container>
-  </div>
+
+
 </template>
 
 <script>
@@ -67,6 +77,14 @@ export default {
         section_content: 'SectionContent',
       },
     }
+  },
+  computed:{
+    generalData(){
+      return this.$store.getters.getGeneral
+    },
+    showCta(){
+      return this.$route.path !== '/kontakt/' && this.$route.path !== '/kontakt'
+    },
   },
   head() {
     let meta = []
