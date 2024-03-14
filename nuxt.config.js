@@ -104,6 +104,7 @@ export default {
 
   sitemap:{
     hostname: 'https://balcar.com.pl',
+    trailingSlash: true
   },
 
   image: {
