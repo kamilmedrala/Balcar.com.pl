@@ -24,9 +24,14 @@
         <SectionContent v-if="pageData.acf.section_text_1 && pageData.acf.section_text_1.content" :data="pageData.acf.section_text_1" />
         <SectionContent v-if="pageData.acf.section_text_2 && pageData.acf.section_text_2.content" class="mt-10" :data="pageData.acf.section_text_2" />
     </SectionContainer>
-    <section-container v-if="generalData.section_contact" class="mt-auto mb-10 md:mb-[100px]">
+    <SectionContainer class="mb-16 md:mb-36">
+      <template #full>
+        <SectionReviews v-if="pageData.acf.section_reviews" :data="pageData.acf.section_reviews" />
+      </template>
+    </SectionContainer>
+    <SectionContainer v-if="generalData.section_contact" class="mt-auto mb-10 md:mb-[100px]">
       <SectionCta :data="generalData.section_contact"/>
-    </section-container>
+    </SectionContainer>
     <CommonScrollProgress />
   </div>
 </template>
