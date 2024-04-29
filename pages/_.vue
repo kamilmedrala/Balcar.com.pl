@@ -8,8 +8,13 @@
           :title="pageData.title.rendered"
           :bgImage="section && section.banner_image ? section.banner_image : {}"
         />
-        <section-container v-else-if="componentRename[name]" :key="name">
+        <section-container v-else-if="componentRename[name]">
           <component :is="componentRename[name]" :data="section"></component>
+        </section-container>
+        <section-container v-else-if="componentRenameFullwidth[name]">
+          <template #full>
+            <component :is="componentRenameFullwidth[name]" :data="section"></component>
+          </template>
         </section-container>
       </template>
       <section-container v-if="pageData.acf.section_gallery">
@@ -53,6 +58,7 @@ export default {
           }&acf_format=standard`
         : `/wp/v2/pages?slug=${route.path}&acf_format=standard`
     )
+
     $formatPageData(pageData[0])
     return { pageData: pageData[0] }
   },
@@ -75,7 +81,13 @@ export default {
     return {
       componentRename: {
         section_content: 'SectionContent',
+        section_list_columns: 'SectionListColumns',
+        section_content_image: 'SectionContentImage',
       },
+      componentRenameFullwidth: {
+        section_list_icons: 'SectionListIcons',
+        section_projects: 'SectionProjects',
+      }
     }
   },
   computed:{

@@ -54,6 +54,9 @@ export default {
     @apply text-xl md:text-2xl
 }
 
+.content :deep(h3){
+    @apply text-2xl md:text-3xl mb-5
+}
 .content :deep(h4){
     @apply text-lg md:text-xl mb-5
 }
@@ -61,7 +64,6 @@ export default {
 .content:deep(a) {
     @apply text-gold-light hover:underline
 }
-
 .content:deep(em){
     @apply text-gold-light not-italic
 }
