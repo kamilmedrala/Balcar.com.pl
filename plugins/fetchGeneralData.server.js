@@ -13,6 +13,9 @@ export default async ({ store, $axios }) => {
     const offersData = await $axios.$get('/wp/v2/job-offers')
     store.commit('setOffers', offersData)
 
+    const projectsData = await $axios.$get('/wp/v2/home-projects')
+    store.commit('setProjects', projectsData)
+
   } catch (error) {
     console.error('Error fetching data:', error);
   }

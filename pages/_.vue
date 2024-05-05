@@ -83,10 +83,10 @@ export default {
         section_content: 'SectionContent',
         section_list_columns: 'SectionListColumns',
         section_content_image: 'SectionContentImage',
+        section_projects: 'SectionProjects',
       },
       componentRenameFullwidth: {
         section_list_icons: 'SectionListIcons',
-        section_projects: 'SectionProjects',
       }
     }
   },

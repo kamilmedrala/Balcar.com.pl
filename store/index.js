@@ -5,7 +5,8 @@ export const state = () => ({
     footer: {}
   },
   general: {},
-  offers:[]
+  offers:[],
+  projects: []
 })
 
 
@@ -21,6 +22,10 @@ export const getters = {
   getOffers(state) {
     return state.offers
   },
+
+  getProjects(state) {
+    return state.projects
+  },
 }
 
 export const mutations = {
@@ -35,5 +40,8 @@ export const mutations = {
   },
   setOffers(state, data ) {    
     state.offers = data
+  },
+  setProjects(state, data ) {    
+    state.projects = data
   },
 }
