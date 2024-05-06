@@ -41,7 +41,7 @@ a.nuxt-link-exact-active {
 }
 
 * {
-  scrollbar-width: auto;
+  scrollbar-width: thin;
   scrollbar-color: #3b3a37 #f7f7f7;
 }
 

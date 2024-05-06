@@ -99,7 +99,8 @@ export default {
   },
 
   generate:{
-    interval: 1000
+    interval: 1000,
+    fallback: '404.html',
   },
 
   sitemap:{
