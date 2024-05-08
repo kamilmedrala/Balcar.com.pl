@@ -1,5 +1,5 @@
 <template>
-    <div class="fixed z-10 inset-0 bg-black/20 flex items-center justify-center overflow-auto max-h-[100dvh] px-5 md:px-14 pt-20 pb-5 md:pb-10">
+    <div class="fixed z-20 inset-0 bg-black/20 flex items-center justify-center overflow-auto max-h-[100dvh] px-5 md:px-14 pt-20 pb-5 md:pb-10">
         <div class="flex flex-col relative max-h-full max-w-7xl bg-white shadow-lg w-full h-full">
             <div class="flex justify-end">
                 <button @click.stop="emitClosePopup()" class="group p-2 md:p-3 cursor-pointer">
