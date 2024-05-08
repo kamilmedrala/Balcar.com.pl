@@ -24,8 +24,8 @@
         </div>
         <transition name="fade">
             <UiPopup v-if="data.acf?.pdf_file && popupActive"  @close="closePdfPopup">
-                <object :data="data.acf.pdf_file" type="application/pdf" width="100%" height="100%">
-                    <iframe :src="data.acf.pdf_file" frameborder="0" width="100%"></iframe>
+                <object :data="data.acf.pdf_file" width="100%" height="100%" class="flex justify-center">
+                    <a :href="data.acf.pdf_file" class="relative flex justify-between items-center gap-5 w-fit text-white hover:text text-base md:text-lg px-5 py-2.5 md:px-6 md:py-3 bg-gold-light hover:bg-gold-dark transition duration-200 after:content-[''] after:w-5 after:h-0.5 after:bg-white hover:after:translate-x-2 after:transition after:duration-200 shadow-lg shadow-gold-light/20">Pokaż PDF</a>
                 </object>
             </UiPopup>
         </transition>
