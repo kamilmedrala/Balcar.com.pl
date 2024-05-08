@@ -9,7 +9,7 @@
                     </svg>
                 </button>
             </div>
-            <div class="overflow-auto grow">
+            <div class="overflow-auto grow relative">
                 <slot></slot>
             </div>
         </div>
