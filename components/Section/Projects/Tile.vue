@@ -24,7 +24,9 @@
         </div>
         <transition name="fade">
             <UiPopup v-if="data.acf?.pdf_file && popupActive"  @close="closePdfPopup">
-                <object :data="data.acf.pdf_file" width="100%" height="100%"></object>
+                <object :data="data.acf.pdf_file" type="application/pdf" width="100%" height="100%">
+                    <embed :src="data.acf.pdf_file" type="application/pdf">
+                </object>
             </UiPopup>
         </transition>
     </li>
