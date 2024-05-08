@@ -25,7 +25,7 @@
         <transition name="fade">
             <UiPopup v-if="data.acf?.pdf_file && popupActive"  @close="closePdfPopup">
                 <object :data="data.acf.pdf_file" width="100%" height="100%">
-                    <iframe :src="`https://docs.google.com/gview?url=${data.acf.pdf_file}`" width="100%" height="100%" frameborder="0"></iframe>
+                    <iframe :src="`https://docs.google.com/gview?url=${data.acf.pdf_file}&embedded=true`" width="100%" height="100%" frameborder="0"></iframe>
                 </object>
             </UiPopup>
         </transition>
