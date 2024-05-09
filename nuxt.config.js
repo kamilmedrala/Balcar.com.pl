@@ -10,7 +10,7 @@ export default {
   head: {
     title: 'Balcar.com.pl',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'pl'
     },
     meta: [
       { charset: 'utf-8' },

@@ -24,9 +24,14 @@
         </div>
         <transition name="fade">
             <UiPopup v-if="data.acf?.pdf_file && popupActive"  @close="closePdfPopup">
-                <object :data="data.acf.pdf_file" width="100%" height="100%">
-                    <iframe :src="`https://docs.google.com/gview?url=${data.acf.pdf_file}&embedded=true`" width="100%" height="100%" frameborder="0"></iframe>
-                </object>
+                <div class="relative w-full h-full">
+                    <span class="absolute z-0 block top-[calc(50%_-_20px)] left-[calc(50%_-_20px)] w-10 h-10 rounded-full border border-b-transparent border-gold-light animate-spin">
+                    </span>
+                    <!-- <iframe :src="`https://docs.google.com/viewer?url=${data.acf.pdf_file}&embedded=true`" width="100%" height="100%" frameborder="0" class="relative z-10"></iframe> -->
+                    <iframe :src="`${data.acf.pdf_file}`" width="100%" height="100%" frameborder="0" class="relative z-10"></iframe>
+                </div>
+                <!-- <object :data="data.acf.pdf_file" width="100%" height="100%">
+                </object> -->
             </UiPopup>
         </transition>
     </li>
