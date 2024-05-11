@@ -1,6 +1,6 @@
 <template>
-    <li class="border-gray-light hover:border-gold-light border border-solid transition duration-200" @click="openPdfPopup()">
-        <div class="group flex flex-col h-full cursor-pointer">
+    <li>
+        <div class="group flex flex-col h-full cursor-pointer border-gray-light hover:border-gold-light border border-solid transition duration-200" @click="handlePDFView()">
             <div class="w-full bg-gray-lightest aspect-[55/30]">
                 <nuxt-picture
                 v-if="data.acf?.image?.url"
@@ -22,10 +22,11 @@
                 </svg>
             </div>
         </div>
+        <a ref="downloadLink" v-if="data.acf?.pdf_file" :href="data.acf.pdf_file" download title="Pobierz PDF" class="hidden"></a>
         <transition name="fade">
             <UiPopup v-if="data.acf?.pdf_file && popupActive"  @close="closePdfPopup">
                 <div class="relative w-full h-full">
-                    <span class="absolute z-0 block top-[calc(50%_-_20px)] left-[calc(50%_-_20px)] w-10 h-10 rounded-full border border-b-transparent border-gold-light animate-spin">
+                    <span class=" absolute z-0 block top-[calc(50%_-_20px)] left-[calc(50%_-_20px)] w-10 h-10 rounded-full border border-b-transparent border-gold-light animate-spin">
                     </span>
                     <!-- <iframe :src="`https://docs.google.com/viewer?url=${data.acf.pdf_file}&embedded=true`" width="100%" height="100%" frameborder="0" class="relative z-10"></iframe> -->
                     <iframe :src="`${data.acf.pdf_file}`" width="100%" height="100%" frameborder="0" class="relative z-10"></iframe>
@@ -37,6 +38,7 @@
     </li>
 </template>
 <script>
+
 export default {
     props: {
         data: {
@@ -53,11 +55,40 @@ export default {
         openPdfPopup(){
             this.popupActive = true
         },
+        handlePDFView(){
+            if ( this.getBrowserName() == 'Safari') {
+                this.$refs['downloadLink']?.click()
+            }else{
+                this.openPdfPopup()
+            }
+        },
         closePdfPopup(){
             this.popupActive = false
         },
-
-
+        getBrowserName(){
+            if (
+            (navigator.userAgent.indexOf('Opera') ||
+                navigator.userAgent.indexOf('OPR')) != -1
+            ) {
+            return 'Opera'
+            } else if (navigator.userAgent.indexOf('Edg') != -1) {
+            return 'Edge'
+            } else if (navigator.userAgent.indexOf('Chrome') != -1) {
+            return 'Chrome'
+            } else if (navigator.userAgent.indexOf('Safari') != -1) {
+            return 'Safari'
+            } else if (navigator.userAgent.indexOf('Firefox') != -1) {
+            return 'Firefox'
+            } else if (
+            navigator.userAgent.indexOf('MSIE') != -1 ||
+            !!document.documentMode == true
+            ) {
+            //IF IE > 10
+            return 'IE'
+            } else {
+            return 'unknown'
+            }
+        }
     }
 }
 </script>
