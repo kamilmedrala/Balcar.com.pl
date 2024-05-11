@@ -52,11 +52,11 @@ export default {
             this.popupActive = true
         },
         handlePDFView(){
-            if ( this.getBrowserName() == 'Safari' && this.$props.data.acf?.pdf_file) {
-                window.location.href = this.$props.data.acf.pdf_file
-            }else{
+            // if ( this.getBrowserName() == 'Safari' && this.$props.data.acf?.pdf_file) {
+            //     window.location.href = this.$props.data.acf.pdf_file
+            // }else{
                 this.openPdfPopup()
-            }
+            // }
         },
         closePdfPopup(){
             this.popupActive = false
